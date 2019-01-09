@@ -56,6 +56,8 @@
     <DeployExtension>False</DeployExtension>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Dtos\DirectorySystemDto.cs" />
+    <Compile Include="Dtos\FileSystemDto.cs" />
     <Compile Include="NewTempProjectCommand.cs" />
     <Compile Include="NewTempProjectCommandPackage.cs" />
     <Compile Include="StartPageExtender.cs" />
@@ -66,9 +68,14 @@
       <DependentUpon>TemporaryProjects.vsct</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TempProjectsLocationContext.cs" />
+    <Compile Include="YoProcessor.cs" />
+    <Compile Include="zTempProjectsLocationContext.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="..\yo.bat">
+      <Link>yo.bat</Link>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <None Include="Key.snk" />
   </ItemGroup>
   <ItemGroup>
