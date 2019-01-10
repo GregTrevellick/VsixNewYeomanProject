@@ -24,16 +24,16 @@ namespace TemporaryProjects
             Instance = new NewTempProjectCommand(commandService, dte);
         }
 
-        // You can test this command in the current VS instance like this:
-        // https://github.com/jcansdale/TestDriven.Net-Issues/wiki/Test-With...VS-SDK
         [STAThread]
         static void Execute(DTE dte)
         {
             ThreadHelper.ThrowIfNotOnUIThread();
-            using (new TempProjectsLocationContext(dte))
-            {
-                dte.ExecuteCommand("File.NewProject");
-            }
+            //using (new TempProjectsLocationContext(dte))
+            //{
+            //    dte.ExecuteCommand("File.NewProject");
+            //}
+            var yoproc = new CommonYo.YoProcessor();
+            yoproc.Generate();
         }
 
         public static NewTempProjectCommand Instance

@@ -179,7 +179,7 @@ namespace TemporaryProjects
                 base.OnApplyTemplate();
 
                 var textBlock = (TextBlock)GetTemplateChild("MoreTemplatesText");
-                textBlock.Text = "Create new temporary project...";
+                textBlock.Text = "Create new yeoman project...";
             }
 
             protected override void OnClick()
