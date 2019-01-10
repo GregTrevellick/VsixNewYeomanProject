@@ -4,10 +4,6 @@ namespace CommonYo
 {
     public class YoProcessor
     {
-       //public YoProcessor()
-       // {
-       // }
-
         public void Generate()
         {
             var processStartInfo = new ProcessStartInfo()
