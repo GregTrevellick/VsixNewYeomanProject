@@ -13,8 +13,6 @@ namespace TemporaryProjects
         private readonly DTE dte;
         private const string CookieName = "TemporaryProjects.StartPageExtender.Cookie";
 
-        // You can test this in the current Visual Studio instance like this:
-        // https://github.com/jcansdale/TestDriven.Net-Issues/wiki/Test-With...VS-SDK
         [STAThread]
         public static void Initialize(IVsUIShell7 vsUIShell, DTE dte)
         {
