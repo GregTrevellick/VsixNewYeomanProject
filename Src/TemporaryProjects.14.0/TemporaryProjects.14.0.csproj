@@ -56,8 +56,8 @@
     <DeployExtension>False</DeployExtension>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="NewTempProjectCommand.cs" />
-    <Compile Include="NewTempProjectCommandPackage.cs" />
+    <Compile Include="NewYeomanProjectCommand.cs" />
+    <Compile Include="NewYeomanProjectCommandPackage.cs" />
     <Compile Include="StartPageExtender.cs" />
     <Compile Include="StartPageExtenderPackage.cs" />
     <Compile Include="TemporaryProjects.cs">

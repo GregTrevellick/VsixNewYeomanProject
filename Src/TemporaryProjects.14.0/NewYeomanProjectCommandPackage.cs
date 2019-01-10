@@ -12,11 +12,11 @@ namespace TemporaryProjects
     [ProvideMenuResource("Menus.ctmenu", 1)]
     [Guid(PackageGuids.newTempProjectCommandPackageString)]
     [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1650:ElementDocumentationMustBeSpelledCorrectly", Justification = "pkgdef, VS and vsixmanifest are valid VS terms")]
-    public sealed class NewTempProjectCommandPackage : AsyncPackage
+    public sealed class NewYeomanProjectCommandPackage : AsyncPackage
     {
         protected override async Task InitializeAsync(CancellationToken cancellationToken, IProgress<ServiceProgressData> progress)
         {
-            await NewTempProjectCommand.InitializeAsync(this);
+            await NewYeomanProjectCommand.InitializeAsync(this);
         }
     }
 }

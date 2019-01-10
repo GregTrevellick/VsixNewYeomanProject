@@ -6,9 +6,9 @@ using Task = System.Threading.Tasks.Task;
 
 namespace TemporaryProjects
 {
-    internal sealed class NewTempProjectCommand
+    internal sealed class NewYeomanProjectCommand
     {
-        private NewTempProjectCommand(IMenuCommandService commandService, DTE dte)
+        private NewYeomanProjectCommand(IMenuCommandService commandService, DTE dte)
         {
             var menuCommandID = new CommandID(PackageGuids.guidNewTempProjectCommandPackageCmdSet, PackageIds.NewTempProjectCommandId);
             var menuItem = new MenuCommand((s, e) => Execute(dte), menuCommandID);
@@ -21,7 +21,7 @@ namespace TemporaryProjects
 
             var commandService = (IMenuCommandService)await package.GetServiceAsync((typeof(IMenuCommandService)));
             var dte = (DTE)await package.GetServiceAsync((typeof(DTE)));
-            Instance = new NewTempProjectCommand(commandService, dte);
+            Instance = new NewYeomanProjectCommand(commandService, dte);
         }
 
         [STAThread]
@@ -36,7 +36,7 @@ namespace TemporaryProjects
             yoproc.Generate();
         }
 
-        public static NewTempProjectCommand Instance
+        public static NewYeomanProjectCommand Instance
         {
             get;
             private set;
