@@ -1,0 +1,32 @@
+SIGNING
+=======
+1) Paste key.snk into C:\_git\VsixYeomanTemplates\src\AngularBasicVsix\bin\Debug
+2) CD C:\_git\_TEMPLATES\VsixYeomanTemplates\src\CommonUi\bin\Debug 
+3) "C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.6.1 Tools\sn.exe" -p key.snk outfile.key.
+4) "C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.6.1 Tools\sn.exe" -t outfile.key.
+5) Paste public key into C:\_git\VsixYeomanTemplates\src\AngularBasicMinimalTemplate\MinimalProjectTemplate.vstemplate at line <Assembly>AngularBasicVsix, Version=1.0.0.0, Culture=Neutral, PublicKeyToken=c8911b993b41a682</Assembly>  
+
+
+
+
+TODOs
+=====
+publish matt
+PR for matt
+
+83. toucan https://github.com/mrellipse/toucan
+    Aa2.sln https://github.com/sgbj/generator-aspnetcore-angular2
+    Vnc1.sln https://github.com/vue-typed/generator-vue-net-core
+90. make dialog include courier-new font text
+91. hyperlink in dialog to matt/omni 
+92. in dialog let user choose new folder path for yo project
+93. icon in dialog 
+94. make it work for vs2019 (not yet, eventually in fullness of time)
+
+
+
+
+DUNNO	
+https://github.com/digipolisantwerp/generator-dgp-api-aspnetcore_yeoman
+https://github.com/digipolisantwerp/generator-dgp-web-aspnetcore_yeoman
+https://github.com/serghar/CANDYMAN
