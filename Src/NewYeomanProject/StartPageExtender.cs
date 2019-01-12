@@ -11,7 +11,7 @@ namespace NewYeomanProject
     internal sealed class StartPageExtender : IVsWindowFrameEvents
     {
         private readonly DTE dte;
-        private const string CookieName = "TemporaryProjects.StartPageExtender.Cookie";
+        private const string CookieName = "YeomanProjects.StartPageExtender.Cookie";
 
         [STAThread]
         public static void Initialize(IVsUIShell7 vsUIShell, DTE dte)
@@ -132,7 +132,7 @@ namespace NewYeomanProject
                 var recentProjectsPanel = FindRecentProjectsPanel(contentHost);
                 if (recentProjectsPanel != null)
                 {
-                    AddNewTemporaryProjectButton(recentProjectsPanel);
+                    AddNewYeomanProjectButton(recentProjectsPanel);
                     contentHost.LayoutUpdated -= LayoutUpdated;
                 }
             }
@@ -150,9 +150,9 @@ namespace NewYeomanProject
             return null;
         }
 
-        private void AddNewTemporaryProjectButton(Grid recentProjectsPanel)
+        private void AddNewYeomanProjectButton(Grid recentProjectsPanel)
         {
-            var button = new NewTemporaryProjectButton(dte)
+            var button = new NewYeomanProjectButton(dte)
             {
                 Style = ((Button)recentProjectsPanel.FindName("MoreTemplatesButton")).Style
             };
@@ -163,11 +163,11 @@ namespace NewYeomanProject
             recentProjectsPanel.Children.Add(button);
         }
 
-        private sealed class NewTemporaryProjectButton : Button
+        private sealed class NewYeomanProjectButton : Button
         {
             private readonly DTE dte;
 
-            public NewTemporaryProjectButton(DTE dte)
+            public NewYeomanProjectButton(DTE dte)
             {
                 this.dte = dte;
             }

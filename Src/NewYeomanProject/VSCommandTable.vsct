@@ -13,7 +13,7 @@
         <Icon guid="guidImages" id="bmpPic1" />
         <!--<CommandFlag>IconIsMoniker</CommandFlag>-->
         <Strings>
-          <ButtonText>Yeoman Project...14</ButtonText>
+          <ButtonText>Yeoman Project...15.</ButtonText>
         </Strings>
       </Button>
     </Buttons>

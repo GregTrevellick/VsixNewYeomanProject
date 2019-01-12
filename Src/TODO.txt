@@ -1,10 +1,4 @@
 compare vspackage files
-
-find/replace 
- --NewYeomanProjectCommandId
- --newYeomanProjectCommandPackage
- --guidNewYeomanProjectCommandPackageCmdSet
-
 scan for words 'temporary', 'fiddler'
 appveyor, codehub, sonar, etc
 add new badges vis readmesynchronizer
