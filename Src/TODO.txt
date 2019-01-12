@@ -1,23 +1,6 @@
-check badges
-
 add a top LH corner orange star to icon against File>New ?
 
-
-
-
-
-
-
-
-SIGNING
-=======
-Paste key.snk into C:\_git\VsixYeomanTemplates\src\AngularBasicVsix\bin\Debug
-
-CD C:\_git\VsixYeomanProjects\Src\NewYeomanProject\bin\Debug 
-
-"C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.6.1 Tools\sn.exe" -p key.snk outfile.key.
-
-"C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.6.1 Tools\sn.exe" -t outfile.key.
-
-Paste public key into C:\_git\VsixYeomanTemplates\src\AngularBasicMinimalTemplate\MinimalProjectTemplate.vstemplate at line <Assembly>AngularBasicVsix, Version=1.0.0.0, Culture=Neutral, PublicKeyToken=c8911b993b41a682</Assembly>  
+check badges
+PR for matt
+add this to omni/angbas vsmp pages
 
