@@ -1,4 +1,3 @@
-icon against File > New >
 replace any guids that exist in cansdale code repo esp .vsct file
 find/replace 'NewTempProjectCommandId'
 scan for words 'temporary', 'fiddler'

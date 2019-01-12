@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="530d4cf0-0e05-449f-945b-d14dcf6eb95d" Version="1.0.1" Language="en-US" Publisher="Greg Trevellick" />
+        <Identity Id="4B89A6EA-E334-4719-B41D-8B1894C56039" Version="1.0.1" Language="en-US" Publisher="Greg Trevellick" />
         <DisplayName>New Yeoman Project</DisplayName>
         <Description xml:space="preserve">Adds `File &gt; New &gt; Yeoman Project...` command to create a new Yeoman scaffoled project.</Description>
         <MoreInfo>https://github.com/GregTrevellick/VsixNewYeomanProject</MoreInfo>
