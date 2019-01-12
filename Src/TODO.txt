@@ -1,7 +1,7 @@
 e2e test
+tidy up the vsmp readme properly
 test without Yo command, without node, etc
 rename repo to omit 'new'
-tidy up the vsmp readme properly
 check badges
 
 PR for matt
