@@ -20,7 +20,7 @@
         <Icon guid="ImageCatalogGuid" id="NewTestGroup" />
         <CommandFlag>IconIsMoniker</CommandFlag>
         <Strings>
-          <ButtonText>Yeoman Project...3a</ButtonText>
+          <ButtonText>Yeoman Project...4</ButtonText>
         </Strings>
       </Button>
     </Buttons>
