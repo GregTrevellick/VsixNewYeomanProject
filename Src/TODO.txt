@@ -1,5 +1,4 @@
-
-add new badges vis readmesynchronizer
+check badges
 
 add a top LH corner orange star to icon against File>New ?
 
