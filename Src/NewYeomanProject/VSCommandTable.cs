@@ -16,10 +16,12 @@ namespace NewYeomanProject
         public const string startPageExtenderPackageString = "4192762b-3595-46c9-96ea-09da3040410b";
         public const string startPageToolWindowString = "387cb18d-6153-4156-9257-9ac3f9207bbe";
         public const string guidNewTempProjectCommandPackageCmdSetString = "f5e2d15e-a980-4a05-81ec-fda9c6f91a9c";
+        public const string guidImagesString = "dbb0b277-359d-445e-89a7-ff09f806ca18";
         public static Guid newTempProjectCommandPackage = new Guid(newTempProjectCommandPackageString);
         public static Guid startPageExtenderPackage = new Guid(startPageExtenderPackageString);
         public static Guid startPageToolWindow = new Guid(startPageToolWindowString);
         public static Guid guidNewTempProjectCommandPackageCmdSet = new Guid(guidNewTempProjectCommandPackageCmdSetString);
+        public static Guid guidImages = new Guid(guidImagesString);
     }
     /// <summary>
     /// Helper class that encapsulates all CommandIDs uses across VS Package.
@@ -27,5 +29,6 @@ namespace NewYeomanProject
     internal sealed partial class PackageIds
     {
         public const int NewTempProjectCommandId = 0x0100;
+        public const int bmpPic1 = 0x0001;
     }
 }

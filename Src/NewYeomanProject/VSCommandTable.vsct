@@ -10,13 +10,18 @@
     <Buttons>
       <Button guid="guidNewTempProjectCommandPackageCmdSet" id="NewTempProjectCommandId" priority="0x0100" type="Button">
         <Parent guid="guidSHLMainMenu" id="IDG_VS_FILE_NEW_CASCADE" />
-        <Icon guid="ImageCatalogGuid" id="NewTestGroup" />
-        <CommandFlag>IconIsMoniker</CommandFlag>
+        <Icon guid="guidImages" id="bmpPic1" />
+        <!--<CommandFlag>IconIsMoniker</CommandFlag>-->
         <Strings>
-          <ButtonText>Yeoman Project...9</ButtonText>
+          <ButtonText>Yeoman Project...10</ButtonText>
         </Strings>
       </Button>
     </Buttons>
+
+
+    <Bitmaps>
+      <Bitmap guid="guidImages" href="Resources\VsixCommandIcon_16x16.png" usedList="bmpPic1"/>
+    </Bitmaps>
   </Commands>
 
   <Symbols>
@@ -30,6 +35,10 @@
     <!-- This is the guid used to group the menu commands together -->
     <GuidSymbol name="guidNewTempProjectCommandPackageCmdSet" value="{f5e2d15e-a980-4a05-81ec-fda9c6f91a9c}">
       <IDSymbol name="NewTempProjectCommandId" value="0x0100" />
+    </GuidSymbol>
+
+    <GuidSymbol name="guidImages" value="{DBB0B277-359D-445E-89A7-FF09F806CA18}" >
+      <IDSymbol name="bmpPic1" value="1" />
     </GuidSymbol>
   
   </Symbols>

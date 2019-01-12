@@ -70,7 +70,6 @@
       <Link>LICENSE.txt</Link>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="Resources\VsixCommandIcon_16x16.png" />
     <Content Include="Resources\VsixExtensionPreview_175x175.png" />
     <Content Include="Resources\VsixExtensionPreview_90x90.png" />
     <Content Include="VsixArtefacts\VsmpPublish.txt" />
