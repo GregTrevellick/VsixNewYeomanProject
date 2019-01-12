@@ -186,7 +186,7 @@ namespace NewYeomanProject
 
                 base.OnClick();
 
-                dte.Commands.Raise(PackageGuids.guidNewTempProjectCommandPackageCmdSetString, PackageIds.NewTempProjectCommandId, null, null);
+                dte.Commands.Raise(PackageGuids.guidNewYeomanProjectCommandPackageCmdSetString, PackageIds.NewYeomanProjectCommandId, null, null);
             }
         }
     }

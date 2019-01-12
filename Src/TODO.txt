@@ -1,6 +1,10 @@
 compare vspackage files
---replace any guids that exist in cansdale code repo esp .vsct file
-find/replace 'NewTempProjectCommandId'
+
+find/replace 
+ --NewYeomanProjectCommandId
+ --newYeomanProjectCommandPackage
+ --guidNewYeomanProjectCommandPackageCmdSet
+
 scan for words 'temporary', 'fiddler'
 appveyor, codehub, sonar, etc
 add new badges vis readmesynchronizer

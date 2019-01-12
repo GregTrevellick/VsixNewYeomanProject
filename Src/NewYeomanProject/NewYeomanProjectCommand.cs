@@ -10,7 +10,7 @@ namespace NewYeomanProject
     {
         private NewYeomanProjectCommand(IMenuCommandService commandService, DTE dte)
         {
-            var menuCommandID = new CommandID(PackageGuids.guidNewTempProjectCommandPackageCmdSet, PackageIds.NewTempProjectCommandId);
+            var menuCommandID = new CommandID(PackageGuids.guidNewYeomanProjectCommandPackageCmdSet, PackageIds.NewYeomanProjectCommandId);
             var menuItem = new MenuCommand((s, e) => Execute(dte), menuCommandID);
             commandService.AddCommand(menuItem);
         }
