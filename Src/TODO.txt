@@ -2,7 +2,7 @@ appveyor, codehub, sonar, etc
 add new badges vis readmesynchronizer
 scan for words 'temporary', 'fiddler'
 icon against File > New >
-
+replace any guids that exist in cansdale code repo
 
 
 
