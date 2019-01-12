@@ -1,4 +1,5 @@
-replace any guids that exist in cansdale code repo esp .vsct file
+compare vspackage files
+--replace any guids that exist in cansdale code repo esp .vsct file
 find/replace 'NewTempProjectCommandId'
 scan for words 'temporary', 'fiddler'
 appveyor, codehub, sonar, etc

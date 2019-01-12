@@ -13,7 +13,7 @@
         <Icon guid="guidImages" id="bmpPic1" />
         <!--<CommandFlag>IconIsMoniker</CommandFlag>-->
         <Strings>
-          <ButtonText>Yeoman Project...11</ButtonText>
+          <ButtonText>Yeoman Project...13</ButtonText>
         </Strings>
       </Button>
     </Buttons>
@@ -26,14 +26,14 @@
 
   <Symbols>
     <!-- This is the package guid. -->
-    <GuidSymbol name="newTempProjectCommandPackage" value="{5abd62ee-e60e-45a5-bd01-9c873436490f}" />
-    <GuidSymbol name="startPageExtenderPackage" value="{4192762b-3595-46c9-96ea-09da3040410b}" />
+    <GuidSymbol name="newTempProjectCommandPackage" value="{76F7BC2C-3947-47DC-A6C5-E030E98EEED6}" />
+    <GuidSymbol name="startPageExtenderPackage" value="{C2DA0FBD-86A2-434A-B830-22C362CCEB4B}" />
 
     <!-- This is the PersistenceSlot for the StartPage tool window -->
     <GuidSymbol name="startPageToolWindow" value="{387cb18d-6153-4156-9257-9ac3f9207bbe}" />
 
     <!-- This is the guid used to group the menu commands together -->
-    <GuidSymbol name="guidNewTempProjectCommandPackageCmdSet" value="{f5e2d15e-a980-4a05-81ec-fda9c6f91a9c}">
+    <GuidSymbol name="guidNewTempProjectCommandPackageCmdSet" value="{8570B726-5877-4583-8764-5C9D7C945EA7}">
       <IDSymbol name="NewTempProjectCommandId" value="0x0100" />
     </GuidSymbol>
 
