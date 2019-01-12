@@ -1,12 +1,13 @@
-compare vspackage files
 better code hub DONE
 hound DONE
 renovate TOCHECK
 appveyor TOCHECK
 sonar TOCHECK
+
 add new badges vis readmesynchronizer
+
 add a top LH corner orange star to icon against File>New ?
-scan for word 'fiddler'
+
 
 
 
