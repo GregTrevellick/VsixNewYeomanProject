@@ -1,4 +1,4 @@
-# Vsix Yeoman Templates
+# Vsix New Yeoman Project
 
 <!--BadgesSTART-->
 <!-- Powered by https://github.com/GregTrevellick/ReadMeSynchronizer -->
@@ -44,26 +44,21 @@
 [![Visual Studio Marketplace version](https://vsmarketplacebadge.apphb.com/version/GregTrevellick.VsixAngularBasic.svg)](https://marketplace.visualstudio.com/items?itemName=GregTrevellick.VsixAngularBasic)
 
 
-[![Visual Studio Marketplace version](https://img.shields.io/badge/-OmniSharpAspNet-%23e2165e.svg)](https://marketplace.visualstudio.com/items?itemName=GregTrevellick.OmniSharpAspNet)
-[![Visual Studio Marketplace downloads](https://vsmarketplacebadge.apphb.com/installs/GregTrevellick.OmniSharpAspNet.svg)](https://marketplace.visualstudio.com/items?itemName=GregTrevellick.OmniSharpAspNet)
-[![Visual Studio Marketplace ratings](https://vsmarketplacebadge.apphb.com/rating/GregTrevellick.OmniSharpAspNet.svg)](https://marketplace.visualstudio.com/items?itemName=GregTrevellick.OmniSharpAspNet)
-[![Visual Studio Marketplace version](https://vsmarketplacebadge.apphb.com/version/GregTrevellick.OmniSharpAspNet.svg)](https://marketplace.visualstudio.com/items?itemName=GregTrevellick.OmniSharpAspNet)
-
-
-
 <!--BadgesEND-->
 
-A code repo for a series of Visual Studio IDE extensions for project templates that are scaffolded out using [Yeoman](https://yeoman.io/).
+
+A Visual Studio IDE extension for creating new [Yeoman](https://yeoman.io/) scaffolded projects.
+
+See the extension [here](https://marketplace.visualstudio.com/items?itemName=GregTrevellick.NewYeomanProject)
 
 ## Give a Star! :star:
 If you like or are using this project to learn or start your solution, please give it a star. Thanks!
 
 ## Credits
 
-[Matt Jeanes](https://github.com/MattJeanes/AngularBasic)
-
-[OmniSharp](https://github.com/OmniSharp/generator-aspnet)
+[Jamie Cansdale](https://github.com/jcansdale/TemporaryProjects)
 
 ## License
 
 Software License is available [here](/LICENSE.txt).
+
