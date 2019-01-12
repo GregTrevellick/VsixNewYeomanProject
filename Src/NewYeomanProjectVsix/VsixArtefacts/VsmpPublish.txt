@@ -2,5 +2,5 @@
 
 cd C:\_git\OpenInApp.Launcher\src\packages\Microsoft.VSSDK.BuildTools.15.8.3252\tools\vssdk\bin
 
-.\VsixPublisher.exe publish  -payload "..\..\..\..\..\..\..\VsixNewYeomanProject\src\NewYeomanProject\bin\debug\NewYeomanProject.vsix"  -publishManifest "..\..\..\..\..\..\..\VsixNewYeomanProject\src\NewYeomanProject\VsixArtefacts\VsmpPublish.json"  -personalAccessToken "vsmp_pat"
+.\VsixPublisher.exe publish  -payload "..\..\..\..\..\..\..\VsixNewYeomanProject\src\NewYeomanProjectVsix\bin\debug\NewYeomanProjectVsix.vsix"  -publishManifest "..\..\..\..\..\..\..\VsixNewYeomanProject\src\NewYeomanProjectVsix\VsixArtefacts\VsmpPublish.json"  -personalAccessToken "vsmp_pat"
 
