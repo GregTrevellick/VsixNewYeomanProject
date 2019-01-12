@@ -1,9 +1,12 @@
+test without Yo command, without node, etc
 rename repo to omit 'new'
 tidy up the vsmp readme properly
-test without Yo command, without node, etc
-fkey liek ctl shift N
-
-
 check badges
+
 PR for matt
 add this to omni/angbas vsmp pages
+
+Subject to take up
+==================
+f-key shortcut ctl shift Y
+allow user to switch file directory
