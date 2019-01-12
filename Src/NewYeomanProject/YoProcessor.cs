@@ -1,6 +1,6 @@
 using System.Diagnostics;
 
-namespace CommonYo
+namespace NewYeomanProject
 {
     public class YoProcessor
     {

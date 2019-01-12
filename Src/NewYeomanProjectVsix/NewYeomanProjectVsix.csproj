@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <MinimumVisualStudioVersion>$(VisualStudioVersion)</MinimumVisualStudioVersion>
@@ -13,8 +13,8 @@
     <ProjectGuid>{97D8A3FD-A616-4E3A-AE6D-76C7EC4FEB8A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TemporaryProjects</RootNamespace>
-    <AssemblyName>TemporaryProjects</AssemblyName>
+    <RootNamespace>NewYeomanProjectVsix</RootNamespace>
+    <AssemblyName>NewYeomanProjectVsix</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <GeneratePkgDefFile>false</GeneratePkgDefFile>
     <IncludeAssemblyInVSIXContainer>false</IncludeAssemblyInVSIXContainer>
@@ -56,12 +56,18 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NewYeomanProject\TemporaryProjects.14.0.csproj">
-      <Project>{36F01D35-AFD4-4144-BD1B-A01689801FFA}</Project>
-      <Name>TemporaryProjects.14.0</Name>
+    <ProjectReference Include="..\NewYeomanProject\NewYeomanProject.csproj">
+      <Project>{36f01d35-afd4-4144-bd1b-a01689801ffa}</Project>
+      <Name>NewYeomanProject</Name>
       <IncludeOutputGroupsInVSIX>BuiltProjectOutputGroup%3bBuiltProjectOutputGroupDependencies%3bGetCopyToOutputDirectoryItems%3bSatelliteDllsProjectOutputGroup%3bPkgdefProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
       <IncludeOutputGroupsInVSIXLocalOnly>DebugSymbolsProjectOutputGroup%3b</IncludeOutputGroupsInVSIXLocalOnly>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\NewTempProjectCommandPackage.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.SDK.Analyzers">

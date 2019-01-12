@@ -1,10 +1,10 @@
-﻿using System;
+using System;
 using System.ComponentModel.Design;
 using EnvDTE;
 using Microsoft.VisualStudio.Shell;
 using Task = System.Threading.Tasks.Task;
 
-namespace TemporaryProjects
+namespace NewYeomanProject
 {
     internal sealed class NewYeomanProjectCommand
     {
@@ -32,7 +32,7 @@ namespace TemporaryProjects
             //{
             //    dte.ExecuteCommand("File.NewProject");
             //}
-            var yoproc = new CommonYo.YoProcessor();
+            var yoproc = new YoProcessor();
             yoproc.Generate();
         }
 

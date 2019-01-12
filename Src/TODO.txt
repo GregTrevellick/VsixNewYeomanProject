@@ -2,7 +2,7 @@ SIGNING
 =======
 Paste key.snk into C:\_git\VsixYeomanTemplates\src\AngularBasicVsix\bin\Debug
 
-CD C:\_git\VsixYeomanProjects\Src\TemporaryProjects.14.0\bin\Debug 
+CD C:\_git\VsixYeomanProjects\Src\NewYeomanProject\bin\Debug 
 
 "C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.6.1 Tools\sn.exe" -p key.snk outfile.key.
 

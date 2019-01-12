@@ -5,11 +5,12 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5C29F08D-1FCB-4002-9042-F5F0A5F8B953}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
+		TODO.txt = TODO.txt
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewYeomanProjectVsix", "NewYeomanProjectVsix\NewYeomanProjectVsix.csproj", "{97D8A3FD-A616-4E3A-AE6D-76C7EC4FEB8A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemporaryProjects.14.0", "NewYeomanProject\TemporaryProjects.14.0.csproj", "{36F01D35-AFD4-4144-BD1B-A01689801FFA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewYeomanProject", "NewYeomanProject\NewYeomanProject.csproj", "{36F01D35-AFD4-4144-BD1B-A01689801FFA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
