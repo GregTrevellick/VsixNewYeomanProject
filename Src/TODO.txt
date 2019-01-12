@@ -1,8 +1,8 @@
 rename repo to omit 'new'
+tidy up the vsmp readme properly
+test without Yo command, without node, etc
 
 add a top LH corner orange star to icon against File>New ?
-add a LHS extension dialog big icon
-
 
 check badges
 PR for matt

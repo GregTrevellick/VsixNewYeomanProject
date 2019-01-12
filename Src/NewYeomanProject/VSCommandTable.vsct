@@ -12,7 +12,7 @@
         <Parent guid="guidSHLMainMenu" id="IDG_VS_FILE_NEW_CASCADE" />
         <Icon guid="guidImages" id="bmpPic1" />
         <Strings>
-          <ButtonText>Yeoman Project...16</ButtonText>
+          <ButtonText>Yeoman Project...</ButtonText>
         </Strings>
       </Button>
     </Buttons>
