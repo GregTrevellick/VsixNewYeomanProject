@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json.schemastore.org/vsix-publish",
+  "assetFiles": [ //images used in VsmpReadMe.md
+    {
+      "pathOnDisk": "..\\Resources\\screen0.png",
+      "targetPath": "screen0.png"
+    }
+  ],
+  "categories": [
+    "other templates"
+  ],
+  "identity": {
+    "internalName": "NewYeomanProject"
+  },
+  "overview": "VsmpReadMe.md", //vsmp page content
+  "priceCategory": "free",
+  "publisher": "GregTrevellick",
+  "private": true,
+  "qna": true,
+  "repo": "https://github.com/GregTrevellick/NewYeomanProject"
+}

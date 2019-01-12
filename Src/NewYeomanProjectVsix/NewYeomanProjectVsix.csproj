@@ -54,6 +54,8 @@
     <None Include="source.extension.vsixmanifest">
       <SubType>Designer</SubType>
     </None>
+    <None Include="VsixArtefacts\VsmpPublish.json" />
+    <None Include="VsixArtefacts\VsmpReadMe.md" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NewYeomanProject\NewYeomanProject.csproj">
@@ -68,6 +70,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <Content Include="VsixArtefacts\VsmpPublish.txt" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.SDK.Analyzers">
