@@ -1,3 +1,4 @@
+e2e test
 test without Yo command, without node, etc
 rename repo to omit 'new'
 tidy up the vsmp readme properly
