@@ -1,8 +1,3 @@
-better code hub DONE
-hound DONE
-renovate TOCHECK
-appveyor TOCHECK
-sonar TOCHECK
 
 add new badges vis readmesynchronizer
 
