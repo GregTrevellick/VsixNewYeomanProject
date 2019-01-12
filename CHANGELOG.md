@@ -7,6 +7,6 @@ These are the incremental changes to each version that has been released on the 
 Individual releases are tagged as such in GitHub.
 
 ## 1.0.1
-**2019-01-07**
+**2019-01-xx**
 - [x] Initial release
 

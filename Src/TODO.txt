@@ -1,3 +1,14 @@
+appveyor, codehub, sonar, etc
+add new badges vis readmesynchronizer
+scan for words 'temporary', 'fiddler'
+icon against File > New >
+
+
+
+
+
+
+
 SIGNING
 =======
 Paste key.snk into C:\_git\VsixYeomanTemplates\src\AngularBasicVsix\bin\Debug

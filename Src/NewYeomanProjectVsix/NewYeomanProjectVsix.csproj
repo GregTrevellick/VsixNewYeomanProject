@@ -66,10 +66,16 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="..\..\LICENSE.txt">
+      <Link>LICENSE.txt</Link>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <Content Include="Resources\NewTempProjectCommandPackage.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <Content Include="Resources\VsixExtensionPreview_175x175.png" />
+    <Content Include="Resources\VsixExtensionPreview_90x90.png" />
     <Content Include="VsixArtefacts\VsmpPublish.txt" />
   </ItemGroup>
   <ItemGroup>

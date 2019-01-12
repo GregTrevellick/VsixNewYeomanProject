@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="YeomanProjects.530d4cf0-0e05-449f-945b-d14dcf6eb95d" Version="1.0.1" Language="en-US" Publisher="Greg Trevellick" />
-        <DisplayName>Yeoman Projects</DisplayName>
-        <Description xml:space="preserve">Add `File &gt; New &gt; Yeoman Project...` command to create a projects in a temporary directory.</Description>
-        <MoreInfo>https://github.com/jcansdale/TemporaryProjects</MoreInfo>
-        <Icon>Resources\NewTempProjectCommandPackage.ico</Icon>
+        <Identity Id="530d4cf0-0e05-449f-945b-d14dcf6eb95d" Version="1.0.1" Language="en-US" Publisher="Greg Trevellick" />
+        <DisplayName>New Yeoman Project</DisplayName>
+        <Description xml:space="preserve">Adds `File &gt; New &gt; Yeoman Project...` command to create a new Yeoman scaffoled project.</Description>
+        <MoreInfo>https://github.com/GregTrevellick/VsixNewYeomanProject</MoreInfo>
+        <License>LICENSE.txt</License>
+        <GettingStartedGuide>https://yeoman.io/</GettingStartedGuide>
+        <ReleaseNotes>https://github.com/GregTrevellick/VsixNewYeomanProject/blob/master/CHANGELOG.md</ReleaseNotes>
+        <Icon>Resources\VsixExtensionPreview_90x90.png</Icon>
+        <PreviewImage>Resources\VsixExtensionPreview_175x175.png</PreviewImage>
+        <Tags>Yeoman; scaffold; New project; Project; Yo; Generator; Generators;</Tags>
     </Metadata>
     <Installation>
         <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[14.0, 17.0)" />
