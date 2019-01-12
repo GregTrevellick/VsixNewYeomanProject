@@ -1,6 +1,6 @@
 add a top LH corner orange star to icon against File>New ?
+add a LHS extension dialog big icon
 
 check badges
 PR for matt
 add this to omni/angbas vsmp pages
-

@@ -8,8 +8,8 @@ namespace NewYeomanProjectVsix
     static class Vsix
     {
         public const string Id = "4B89A6EA-E334-4719-B41D-8B1894C56039";
-        public const string Name = "New Yeoman Project";
-        public const string Description = @"Adds `File > New > Yeoman Project...` command to create a new Yeoman scaffoled project.";
+        public const string Name = "Yeoman Projects";
+        public const string Description = @"Add `File > New > Yeoman Project...` command to create new Yeoman scaffolded projects.";
         public const string Language = "en-US";
         public const string Version = "1.0.1";
         public const string Author = "Greg Trevellick";

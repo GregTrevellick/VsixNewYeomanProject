@@ -1,6 +1,6 @@
 [GitHubRepoPullRequestsURL]: https://github.com/GregTrevellick/VsixNewYeomanProject/pulls
 
-## New Yeoman Projects
+## Yeoman Projects
 
 ### This extension adds a `File > New > Yeoman Project...` menu item
 
