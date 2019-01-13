@@ -57,6 +57,8 @@ If you like or are using this project to learn or start your solution, please gi
 
 ## Credits
 
+[compressor.io](https://compressor.io/)
+
 [Jamie Cansdale](https://github.com/jcansdale/TemporaryProjects)
 
 ## License
