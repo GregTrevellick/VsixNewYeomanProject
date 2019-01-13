@@ -1,5 +1,6 @@
 check badges
-gregt
+revise screenshots/gif to include success popup message
+gregt dedupe
 
 
 
