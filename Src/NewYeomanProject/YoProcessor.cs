@@ -61,26 +61,36 @@ namespace NewYeomanProject
                 //Process is still running. Test to see if the process is hung up.
                 if (process.Responding)
                 {
-                    //Process was responding; close the main window.
                     process.CloseMainWindow();
                 }
                 else
                 {
-                    //Process was not responding; force the process to close.
                     process.Kill();
                 }
 
-                MessageBox.Show("something went wrong somewhere");//gregt
+                MessageBox.Show(
+                    $"Something went wrong - unexpected error occurred. Process {process.ProcessName} with id {process.Id} ended with exit code {process.ExitCode}",
+                       "Error",
+                       MessageBoxButton.OK,
+                       MessageBoxImage.Error);
             }
             else
             {
                 if (process.ExitCode == 0)
                 {
-                    MessageBox.Show("SUCCESS");//gregt
+                    MessageBox.Show(
+                        $"Yeoman project was successfully created at 'gregt_locn'", 
+                        "SUCCESS",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Information);
                 }
                 else
                 {
-                    MessageBox.Show("failed");//gregt
+                    MessageBox.Show(
+                        $"Yeoman project was not created.{Environment.NewLine}Process {process.Id} ended with exit code {process.ExitCode}.",
+                        "ERROR", 
+                        MessageBoxButton.OK, 
+                        MessageBoxImage.Error);
                 }
             }
         }
