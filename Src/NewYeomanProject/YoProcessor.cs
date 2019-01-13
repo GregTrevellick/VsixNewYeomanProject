@@ -9,6 +9,8 @@ namespace NewYeomanProject
 {
     public class YoProcessor : IDisposable
     {
+        ///////////////////////private string _generationDirectory;
+
         public YoProcessor()
         {
             ThreadHelper.ThrowIfNotOnUIThread();
@@ -26,7 +28,7 @@ namespace NewYeomanProject
             // Wrap each arg in quotes so that batch file caters for spaces in path names etc
             var args = $"\"{generationDirectory}\"";
 
-            RunYoBatchFile(yoBatchFile, args);
+            RunYoBatchFile(yoBatchFile, args, generationDirectory);
         }
 
         private static string GetYoBatchFileFullPath()
@@ -38,7 +40,7 @@ namespace NewYeomanProject
             return yoBatchFile;
         }
 
-        private void RunYoBatchFile(string batchFileToBeOpened, string args)
+        private void RunYoBatchFile(string batchFileToBeOpened, string args, string generationDirectory)
         {
             var processStartInfo = new ProcessStartInfo()
             {
@@ -79,7 +81,7 @@ namespace NewYeomanProject
                 if (process.ExitCode == 0)
                 {
                     MessageBox.Show(
-                        $"Yeoman project was successfully created at:{Environment.NewLine}{Environment.NewLine}{args}",//gregt dedupe
+                        $"Yeoman project was successfully created at {generationDirectory}",//gregt dedupe
                         "New Yeoman Project Success",//gregt dedupe
                         MessageBoxButton.OK,
                         MessageBoxImage.Information);
