@@ -54,13 +54,13 @@ namespace NewYeomanProject
             // No need for a try/catch here - any exceptions are caught by the caller and displayed in the dialog to user
             var process = Process.Start(processStartInfo);
             
-            //Wait for the process to exit or time out.
+            // Wait for exit or time out.
             process.WaitForExit();
 
-            //Check to see if the process is still running.
+            // Check to see if process still running
             if (process.HasExited == false)
             {
-                //Process is still running. Test to see if the process is hung up.
+                // Check if process is hung up
                 if (process.Responding)
                 {
                     process.CloseMainWindow();
@@ -78,21 +78,39 @@ namespace NewYeomanProject
             }
             else
             {
-                if (process.ExitCode == 0)
+                switch (process.ExitCode)
                 {
-                    MessageBox.Show(
-                        $"Yeoman project was successfully created at {generationDirectory}",//gregt dedupe
-                        "New Yeoman Project Success",//gregt dedupe
-                        MessageBoxButton.OK,
-                        MessageBoxImage.Information);
-                }
-                else
-                {
-                    MessageBox.Show(
-                        $"Yeoman project was not created.{Environment.NewLine}{Environment.NewLine}Process {process.Id} ended with exit code {process.ExitCode}.",//gregt dedupe
-                        "New Yeoman Project Error",//gregt dedupe
-                        MessageBoxButton.OK, 
-                        MessageBoxImage.Error);
+                    // all good
+                    case 0:
+                        MessageBox.Show(
+                            $"Yeoman project was successfully created at {generationDirectory}",//gregt dedupe
+                            "New Yeoman Project Success",//gregt dedupe
+                            MessageBoxButton.OK,
+                            MessageBoxImage.Information);
+                        break;
+                    // yo command not found
+                    case 1:
+                        MessageBox.Show(
+                            $"Yeoman project was not created.{Environment.NewLine}{Environment.NewLine}Process {process.Id} ended with exit code {process.ExitCode}.",//gregt dedupe
+                            "New Yeoman Project Error",//gregt dedupe
+                            MessageBoxButton.OK,
+                            MessageBoxImage.Error);
+                        break;
+                    // user closed cmd prompt prematurely
+                    case -1073741510:
+                        MessageBox.Show(
+                            $"Yeoman project was not created.",//gregt dedupe
+                            "New Yeoman Project Warning",//gregt dedupe
+                            MessageBoxButton.OK,
+                            MessageBoxImage.Warning);
+                        break;
+                    default:
+                        MessageBox.Show(
+                            $"An unexpected error has occurred.{Environment.NewLine}{Environment.NewLine}Process {process?.ProcessName} with id {process?.Id} ended with exit code {process?.ExitCode}.",//gregt dedupe
+                            "New Yeoman Project Error",//gregt dedupe
+                            MessageBoxButton.OK,
+                            MessageBoxImage.Error);
+                        break;          
                 }
             }
         }
