@@ -1,9 +1,9 @@
 add 'prerequisites' to vsmp readme
-rename repo to omit word 'new'
-
 test without Yo command, without node, etc
-check badges
+gregt
 
+
+check badges
 PR for matt
 add this to omni/angbas vsmp pages
 
