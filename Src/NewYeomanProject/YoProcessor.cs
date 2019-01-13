@@ -9,8 +9,6 @@ namespace NewYeomanProject
 {
     public class YoProcessor : IDisposable
     {
-        ///////////////////////private string _generationDirectory;
-
         public YoProcessor()
         {
             ThreadHelper.ThrowIfNotOnUIThread();
