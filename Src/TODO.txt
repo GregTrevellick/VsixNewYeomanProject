@@ -1,10 +1,7 @@
-e2e test
 tidy up the vsmp readme properly
 test without Yo command, without node, etc
-rename repo to omit 'new'
+rename repo to omit word 'new'
 check badges
-launch visual studio ?
-
 
 PR for matt
 add this to omni/angbas vsmp pages
@@ -13,3 +10,4 @@ Subject to take up
 ==================
 f-key shortcut ctl shift Y
 allow user to switch file directory
+conditionally launch visual studio if a .sln or single .csproj file created ?
