@@ -6,7 +6,7 @@
         <Description xml:space="preserve">Add `File &gt; New &gt; Yeoman Project...` command to create new Yeoman scaffolded projects.</Description>
         <MoreInfo>https://github.com/GregTrevellick/VsixNewYeomanProject</MoreInfo>
         <License>LICENSE.txt</License>
-        <GettingStartedGuide>https://yeoman.io/</GettingStartedGuide>
+        <GettingStartedGuide>https://yeoman.io/learning/index.html</GettingStartedGuide>
         <ReleaseNotes>https://github.com/GregTrevellick/VsixNewYeomanProject/blob/master/CHANGELOG.md</ReleaseNotes>
         <Icon>Resources\VsixExtensionPreview_90x90.png</Icon>
         <PreviewImage>Resources\VsixExtensionPreview_175x175.png</PreviewImage>
