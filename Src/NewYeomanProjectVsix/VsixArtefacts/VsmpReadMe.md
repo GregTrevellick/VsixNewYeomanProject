@@ -10,9 +10,10 @@
 
 ![](screen1.png)
 
-### Yeoman: [Getting Started](https://yeoman.io/learning/index.html)
 
 ### Create new projects using [Yeoman](https://yeoman.io/)
+
+> ***[Getting started with Yeoman](https://yeoman.io/learning/index.html)***
 
 New projects are scaffolded out in your default directory using [Yeoman](https://yeoman.io/) via a command prompt running the command `Yo`
 
