@@ -56,6 +56,7 @@
     <DeployExtension>False</DeployExtension>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="DteContextHelper.cs" />
     <Compile Include="NewYeomanProjectCommand.cs" />
     <Compile Include="NewYeomanProjectCommandPackage.cs" />
     <Compile Include="StartPageExtender.cs" />

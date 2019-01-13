@@ -61,6 +61,9 @@
     </None>
     <None Include="VsixArtefacts\VsmpPublish.json" />
     <None Include="VsixArtefacts\VsmpReadMe.md" />
+    <Content Include="yo.bat">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NewYeomanProject\NewYeomanProject.csproj">

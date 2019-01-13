@@ -28,12 +28,20 @@ namespace NewYeomanProject
         static void Execute(DTE dte)
         {
             ThreadHelper.ThrowIfNotOnUIThread();
-            //using (new TempProjectsLocationContext(dte))
-            //{
-            //    dte.ExecuteCommand("File.NewProject");
-            //}
-            var yoproc = new YoProcessor();
-            yoproc.Generate();
+
+            try
+            {
+                using (var dteContextHelper = new DteContextHelper(dte))
+                {
+                    var yoProcessor = new YoProcessor();
+                    yoProcessor.Generate(dteContextHelper.ProjectsLocation);
+                }
+            }
+            catch (Exception)
+            {
+                //gregt do something
+                throw;
+            }
         }
 
         public static NewYeomanProjectCommand Instance
