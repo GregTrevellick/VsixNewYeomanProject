@@ -1,11 +1,18 @@
+using Microsoft.VisualStudio.Shell;
+using System;
 using System.Diagnostics;
 using System.IO;
 using System.Reflection;
 
 namespace NewYeomanProject
 {
-    public class YoProcessor
+    public class YoProcessor : IDisposable
     {
+        public YoProcessor()
+        {
+            ThreadHelper.ThrowIfNotOnUIThread();
+        }
+
         public void Generate(string newProjectDirectory)
         {
             GenerateYeomanProject(newProjectDirectory);
@@ -41,8 +48,13 @@ namespace NewYeomanProject
                 WindowStyle = ProcessWindowStyle.Normal,
             };
 
-            // No need for a try/catch here - any exceptions are caught by the calling UserForm and displayed in the dialog to user
+            // No need for a try/catch here - any exceptions are caught by the caller and displayed in the dialog to user
             using (var process = Process.Start(processStartInfo)) { }
+        }
+
+        public void Dispose()
+        {
+            ThreadHelper.ThrowIfNotOnUIThread();
         }
     }
 }

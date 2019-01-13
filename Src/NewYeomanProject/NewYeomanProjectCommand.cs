@@ -33,8 +33,8 @@ namespace NewYeomanProject
             try
             {
                 using (var dteContextHelper = new DteContextHelper(dte))
+                using (var yoProcessor = new YoProcessor())
                 {
-                    var yoProcessor = new YoProcessor();//gregt convert to using(new YoProcessor) ?
                     yoProcessor.Generate(dteContextHelper.ProjectsLocation);
                 }
             }
