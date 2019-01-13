@@ -3,6 +3,7 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Reflection;
+using System.Windows;
 
 namespace NewYeomanProject
 {
@@ -49,7 +50,39 @@ namespace NewYeomanProject
             };
 
             // No need for a try/catch here - any exceptions are caught by the caller and displayed in the dialog to user
-            using (var process = Process.Start(processStartInfo)) { }
+            var process = Process.Start(processStartInfo);
+            
+            //Wait for the process to exit or time out.
+            process.WaitForExit();
+
+            //Check to see if the process is still running.
+            if (process.HasExited == false)
+            {
+                //Process is still running. Test to see if the process is hung up.
+                if (process.Responding)
+                {
+                    //Process was responding; close the main window.
+                    process.CloseMainWindow();
+                }
+                else
+                {
+                    //Process was not responding; force the process to close.
+                    process.Kill();
+                }
+
+                MessageBox.Show("something went wrong somewhere");//gregt
+            }
+            else
+            {
+                if (process.ExitCode == 0)
+                {
+                    MessageBox.Show("SUCCESS");//gregt
+                }
+                else
+                {
+                    MessageBox.Show("failed");//gregt
+                }
+            }
         }
 
         public void Dispose()

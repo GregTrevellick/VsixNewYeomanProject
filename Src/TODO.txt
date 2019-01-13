@@ -1,8 +1,8 @@
-test without Yo command, without node, etc
 check badges
 
 add hyperlink to new>yeoman>project vsmp page to omni/angbas vsmp pages
 PR for matt
+add exit /b 1 to angbas & omni
 
 Subject to take up
 ==================
