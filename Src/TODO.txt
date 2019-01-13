@@ -3,6 +3,8 @@ tidy up the vsmp readme properly
 test without Yo command, without node, etc
 rename repo to omit 'new'
 check badges
+launch visual studio ?
+
 
 PR for matt
 add this to omni/angbas vsmp pages

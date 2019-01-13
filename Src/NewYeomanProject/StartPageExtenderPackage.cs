@@ -1,10 +1,10 @@
-using System;
-using System.Threading;
-using System.Diagnostics;
-using System.Runtime.InteropServices;
-using System.Diagnostics.CodeAnalysis;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
+using System;
+using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
+using System.Runtime.InteropServices;
+using System.Threading;
 using Task = System.Threading.Tasks.Task;
 
 namespace NewYeomanProject

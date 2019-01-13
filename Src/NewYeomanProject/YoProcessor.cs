@@ -8,19 +8,8 @@ namespace NewYeomanProject
     {
         public void Generate(string newProjectDirectory)
         {
-            //var newProjectDirectory = GetNewProjectDirectory();
             GenerateYeomanProject(newProjectDirectory);
         }
-
-        //private static string GetNewProjectDirectory()
-        //{
-        //    var newProjectDictionary = replacementsDictionary["$solutiondirectory$"];
-
-        //    var newProjectDirectoryInfo = new DirectoryInfo(newProjectDictionary);
-        //    var newProjectDirectoryFullName = newProjectDirectoryInfo.Parent.FullName;
-
-        //    return newProjectDirectoryFullName;
-        //}
 
         private void GenerateYeomanProject(string generationDirectory)
         {

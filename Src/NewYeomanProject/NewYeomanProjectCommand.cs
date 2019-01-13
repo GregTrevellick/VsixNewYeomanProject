@@ -1,7 +1,7 @@
-using System;
-using System.ComponentModel.Design;
 using EnvDTE;
 using Microsoft.VisualStudio.Shell;
+using System;
+using System.ComponentModel.Design;
 using Task = System.Threading.Tasks.Task;
 
 namespace NewYeomanProject
@@ -33,7 +33,7 @@ namespace NewYeomanProject
             {
                 using (var dteContextHelper = new DteContextHelper(dte))
                 {
-                    var yoProcessor = new YoProcessor();
+                    var yoProcessor = new YoProcessor();//gregt convert to using(new YoProcessor) ?
                     yoProcessor.Generate(dteContextHelper.ProjectsLocation);
                 }
             }

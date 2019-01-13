@@ -1,10 +1,10 @@
-using System;
-using System.Windows;
-using System.Windows.Controls;
 using EnvDTE;
 using Microsoft.VisualStudio;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
+using System;
+using System.Windows;
+using System.Windows.Controls;
 
 namespace NewYeomanProject
 {
