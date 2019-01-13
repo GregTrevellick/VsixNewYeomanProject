@@ -8,15 +8,12 @@ cd %arg1RegularProjDir%
 setlocal enableDelayedExpansion
 call yo
 
-
-
-
-@rem some code
+REM Check for error (e.g. yo command not installed, npm not exists)
 IF %ERRORLEVEL% NEQ 0 GOTO ProcessError
 
-@rem ... other code
+REM Success
 exit /b 0
 
 :ProcessError
-@rem process error
+REM Failure
 exit /b 1
