@@ -71,7 +71,7 @@ namespace NewYeomanProject
                 }
 
                 MessageBox.Show(
-                    $"An unexpected error has occurred.{Environment.NewLine}{Environment.NewLine}Process {process.ProcessName} with id {process.Id} ended with exit code {process.ExitCode}.",//gregt dedupe
+                    $"An unexpected error has occurred.{Environment.NewLine}{Environment.NewLine}Process {process?.ProcessName} with id {process?.Id} ended with exit code {process?.ExitCode}.",//gregt dedupe
                     "New Yeoman Project Error",//gregt dedupe
                     MessageBoxButton.OK,
                     MessageBoxImage.Error);
