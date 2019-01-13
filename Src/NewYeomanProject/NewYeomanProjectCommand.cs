@@ -41,7 +41,7 @@ namespace NewYeomanProject
             catch (Exception ex)
             {
                 MessageBox.Show(
-                    $"Yeoman project was not created.{Environment.NewLine}{Environment.NewLine}{ex.ToString()}.",
+                    $"Yeoman project was not created.{Environment.NewLine}{Environment.NewLine}{ex.ToString()}.",//gregt dedupe
                     "New Yeoman Project Error",//gregt dedupe
                     MessageBoxButton.OK,
                     MessageBoxImage.Error);
