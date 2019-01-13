@@ -69,26 +69,26 @@ namespace NewYeomanProject
                 }
 
                 MessageBox.Show(
-                    $"Something went wrong - unexpected error occurred. Process {process.ProcessName} with id {process.Id} ended with exit code {process.ExitCode}",
-                       "Error",
-                       MessageBoxButton.OK,
-                       MessageBoxImage.Error);
+                    $"Something went wrong - unexpected error occurred.{Environment.NewLine}{Environment.NewLine}Process {process.ProcessName} with id {process.Id} ended with exit code {process.ExitCode}.",//gregt dedupe
+                    "New Yeoman Project Error",//gregt dedupe
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
             }
             else
             {
                 if (process.ExitCode == 0)
                 {
                     MessageBox.Show(
-                        $"Yeoman project was successfully created at 'gregt_locn'", 
-                        "SUCCESS",
+                        $"Yeoman project was successfully created at{Environment.NewLine}{Environment.NewLine}gregt_locn",
+                        "New Yeoman Project Success",//gregt dedupe
                         MessageBoxButton.OK,
                         MessageBoxImage.Information);
                 }
                 else
                 {
                     MessageBox.Show(
-                        $"Yeoman project was not created.{Environment.NewLine}Process {process.Id} ended with exit code {process.ExitCode}.",
-                        "ERROR", 
+                        $"Yeoman project was not created.{Environment.NewLine}{Environment.NewLine}Process {process.Id} ended with exit code {process.ExitCode}.",//gregt dedupe
+                        "New Yeoman Project Error",//gregt dedupe
                         MessageBoxButton.OK, 
                         MessageBoxImage.Error);
                 }
