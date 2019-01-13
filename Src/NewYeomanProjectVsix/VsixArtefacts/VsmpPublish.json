@@ -4,6 +4,14 @@
     {
       "pathOnDisk": "..\\Resources\\screen0.png",
       "targetPath": "screen0.png"
+    },
+    {
+      "pathOnDisk": "..\\Resources\\screen1.png",
+      "targetPath": "screen1.png"
+    },
+    {
+      "pathOnDisk": "..\\Resources\\screen2.gif",
+      "targetPath": "screen2.gif"
     }
   ],
   "categories": [

@@ -1,6 +1,7 @@
-tidy up the vsmp readme properly
-test without Yo command, without node, etc
+add 'prerequisites' to vsmp readme
 rename repo to omit word 'new'
+
+test without Yo command, without node, etc
 check badges
 
 PR for matt
