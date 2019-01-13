@@ -2,6 +2,7 @@ using EnvDTE;
 using Microsoft.VisualStudio.Shell;
 using System;
 using System.ComponentModel.Design;
+using System.Windows;
 using Task = System.Threading.Tasks.Task;
 
 namespace NewYeomanProject
@@ -37,10 +38,9 @@ namespace NewYeomanProject
                     yoProcessor.Generate(dteContextHelper.ProjectsLocation);
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                //gregt do something
-                throw;
+                MessageBox.Show(ex.ToString());
             }
         }
 

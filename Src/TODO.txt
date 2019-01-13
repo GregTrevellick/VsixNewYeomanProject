@@ -1,4 +1,3 @@
-add 'prerequisites' to vsmp readme
 test without Yo command, without node, etc
 gregt
 
