@@ -73,29 +73,39 @@ namespace NewYeomanProject
         {
             if (process.Responding)
             {
-                process.CloseMainWindow();
-
-                var endTime = DateTime.UtcNow;
-                var duration = (endTime - startTime).TotalMilliseconds;
-
-                if (duration > yoCommandTimeOutMilliSeconds)
-                {
-                    // TO DEBUG TEST: set the timeout to, say, 10 secs, wait for 10 secs to expire (no need to create a project)
-                    ShowMessageBoxWarning($"Creation of your Yeoman project was interupted as it exceeded the timeout of {yoCommandTimeOutSeconds}.{Environment.NewLine}{Environment.NewLine}Your project was probably created successfully at {generationDirectory}.");
-                }
-                else
-                {
-                    // TO DEBUG TEST: as above but drag cursor to here
-                    ShowMessageBoxWarning($"Creation of your Yeoman project unexpectedly ended. Please try again.{Environment.NewLine}{Environment.NewLine}Alternatively check {generationDirectory} to see if your project was created successfully.");
-                }
+                HandleResponsiveAbnormalExit(generationDirectory, startTime, process);
             }
             else
             {
-                process.Kill();
-
-                // TO DEBUG TEST: as above but drag cursor to here
-                ShowMessageBoxError($"{_unexpectedError} {GetProcessDetails(false, process)}");
+                HandleNonResponsiveAbnormalExit(process);
             }
+        }
+
+        private void HandleResponsiveAbnormalExit(string generationDirectory, DateTime startTime, Process process)
+        {
+            process.CloseMainWindow();
+
+            var endTime = DateTime.UtcNow;
+            var duration = (endTime - startTime).TotalMilliseconds;
+
+            if (duration > yoCommandTimeOutMilliSeconds)
+            {
+                // TO DEBUG TEST: set the timeout to, say, 10 secs, wait for 10 secs to expire (no need to create a project)
+                ShowMessageBoxWarning($"Creation of your Yeoman project was interupted as it exceeded the timeout of {yoCommandTimeOutSeconds}.{Environment.NewLine}{Environment.NewLine}Your project was probably created successfully at {generationDirectory}.");//gregt wording
+            }
+            else
+            {
+                // TO DEBUG TEST: as above but drag cursor to here
+                ShowMessageBoxError($"Creation of your Yeoman project unexpectedly ended. Please try again.{Environment.NewLine}{Environment.NewLine}Alternatively check {generationDirectory} to see if your project was created successfully.");//gregt wording
+            }
+        }
+
+        private void HandleNonResponsiveAbnormalExit(Process process)
+        {
+            process.Kill();
+
+            // TO DEBUG TEST: as above but drag cursor to here
+            ShowMessageBoxError($"{_unexpectedError} {GetProcessDetails(false, process)}");
         }
 
         private void HandleNormalExit(string generationDirectory, Process process)
