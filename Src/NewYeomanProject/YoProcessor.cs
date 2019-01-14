@@ -10,7 +10,9 @@ namespace NewYeomanProject
     public class YoProcessor : IDisposable
     {
         public string ProjectNotCreated = "Yeoman project was not created.";
-        private int yoCommandTimeOutMilliSeconds = 20_000;//900_000; // === 15 minutes
+        ///////////////////////////private int yoCommandTimeOutMinutes { get { return yoCommandTimeOutSeconds / 60; } }
+        private int yoCommandTimeOutSeconds = 15;
+        private int yoCommandTimeOutMilliSeconds { get { return yoCommandTimeOutSeconds * 1000; } }
         private string _unexpectedError = "An unexpected error has occurred.";
 
         public YoProcessor()
@@ -59,9 +61,10 @@ namespace NewYeomanProject
             var process = Process.Start(processStartInfo);
             process.WaitForExit(yoCommandTimeOutMilliSeconds);
 
+            //gregt extract outs
+
             if (process.HasExited == false)
             {
-                //gregt extract out
                 
                 if (process.Responding)
                 {
@@ -72,8 +75,8 @@ namespace NewYeomanProject
 
                     if (duration > yoCommandTimeOutMilliSeconds)
                     {
-                        // TO DEBUG TEST: set the timeout to, say, 30 secs, create a project and wait for 30 secs to expire
-                        ShowMessageBoxWarning($"Creation of your Yeoman project was interupted as it exceeded the timeout of {yoCommandTimeOutMilliSeconds}.{Environment.NewLine}{Environment.NewLine}Your project was probably created successfully at {generationDirectory}.");
+                        // TO DEBUG TEST: set the timeout to, say, 10 secs, wait for 10 secs to expire (no need to create a project)
+                        ShowMessageBoxWarning($"Creation of your Yeoman project was interupted as it exceeded the timeout of {yoCommandTimeOutSeconds}.{Environment.NewLine}{Environment.NewLine}Your project was probably created successfully at {generationDirectory}.");
                     }
                     else
                     {
@@ -83,10 +86,9 @@ namespace NewYeomanProject
                 }
                 else
                 {
-                    //gregt extract out                   
                     process.Kill();
 
-                    // TO DEBUG TEST: set the timeout to, say, 10 secs, wait for 10 secs to expire (no need to create a project) and drag cursor to here
+                    // TO DEBUG TEST: as above but drag cursor to here
                     ShowMessageBoxError($"{_unexpectedError} {processDetails(false)}");
                 }
             }
