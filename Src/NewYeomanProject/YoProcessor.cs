@@ -59,13 +59,39 @@ namespace NewYeomanProject
             var process = Process.Start(processStartInfo);
             process.WaitForExit(yoCommandTimeOutMilliSeconds);
 
-            if (process.HasExited == false)
+            if (process.HasExited)
             {
-                HandleAbnormalExit(generationDirectory, startTime, process);
+                HandleNormalExit(generationDirectory, process);
             }
             else
             {
-                HandleNormalExit(generationDirectory, process);
+                HandleAbnormalExit(generationDirectory, startTime, process);
+            }
+        }
+
+        private void HandleNormalExit(string generationDirectory, Process process)
+        {
+            switch (process.ExitCode)
+            {
+                // Happy path
+                case 0:
+                    ShowMessageBoxSuccess($"Yeoman project was successfully created at {generationDirectory}");
+                    break;
+
+                // TO DEBUG TEST: change yo.bat from 'call yo' to 'call yo2'
+                case 1:
+                    ShowMessageBoxError($"{ProjectNotCreated}{Environment.NewLine}{Environment.NewLine}{GetProcessDetails(false, process)}");
+                    break;
+
+                // TO DEBUG TEST: manually close command prompt (cross in top RHS corner)
+                case -1073741510:
+                    ShowMessageBoxWarning($"{ProjectNotCreated}");
+                    break;
+
+                // TO DEBUG TEST: add 'exit /b 2' as first command in yo.bat
+                default:
+                    ShowMessageBoxError($"{_unexpectedError}{Environment.NewLine}{Environment.NewLine}{GetProcessDetails(false, process)}");
+                    break;
             }
         }
 
@@ -106,32 +132,6 @@ namespace NewYeomanProject
 
             // TO DEBUG TEST: as above but drag cursor to here
             ShowMessageBoxError($"{_unexpectedError} {GetProcessDetails(false, process)}");
-        }
-
-        private void HandleNormalExit(string generationDirectory, Process process)
-        {
-            switch (process.ExitCode)
-            {
-                // Happy path
-                case 0:
-                    ShowMessageBoxSuccess($"Yeoman project was successfully created at {generationDirectory}");
-                    break;
-
-                // TO DEBUG TEST: change yo.bat from 'call yo' to 'call yo2'
-                case 1:
-                    ShowMessageBoxError($"{ProjectNotCreated}{Environment.NewLine}{Environment.NewLine}{GetProcessDetails(false, process)}");
-                    break;
-
-                // TO DEBUG TEST: manually close command prompt (cross in top RHS corner)
-                case -1073741510:
-                    ShowMessageBoxWarning($"{ProjectNotCreated}");
-                    break;
-
-                // TO DEBUG TEST: add 'exit /b 2' as first command in yo.bat
-                default:
-                    ShowMessageBoxError($"{_unexpectedError}{Environment.NewLine}{Environment.NewLine}{GetProcessDetails(false, process)}");
-                    break;
-            }
         }
 
         private string GetProcessDetails(bool includeProcessName, Process process)
