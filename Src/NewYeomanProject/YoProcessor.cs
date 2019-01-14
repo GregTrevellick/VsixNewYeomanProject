@@ -10,6 +10,7 @@ namespace NewYeomanProject
     public class YoProcessor : IDisposable
     {
         public string ProjectNotCreated = "Yeoman project was not created.";
+        private int yoCommandTimeOutMilliSeconds = 20_000;//900_000; // === 15 minutes
         private string _unexpectedError = "An unexpected error has occurred.";
 
         public YoProcessor()
@@ -43,6 +44,8 @@ namespace NewYeomanProject
 
         private void RunYoBatchFile(string batchFileToBeOpened, string args, string generationDirectory)
         {
+            var startTime = DateTime.UtcNow;
+
             var processStartInfo = new ProcessStartInfo()
             {
                 Arguments = args,
@@ -54,25 +57,46 @@ namespace NewYeomanProject
 
             // No need for a try/catch here - any exceptions are caught by the caller and displayed in the dialog to user
             var process = Process.Start(processStartInfo);
-            
-            // Wait for exit or time out.
-            process.WaitForExit();
+            process.WaitForExit(yoCommandTimeOutMilliSeconds);
 
-            // Check to see if process still running
             if (process.HasExited == false)
             {
-                // Check if process is hung up
                 if (process.Responding)
                 {
+                    //If we hit here most likely a timeout
                     process.CloseMainWindow();
+
+                    var endTime = DateTime.UtcNow;
+                    var duration = (endTime - startTime).TotalMilliseconds;
+                    if (duration > yoCommandTimeOutMilliSeconds)
+                    {
+                        // TO DEBUG TEST: set the timeout to, say, 30 secs, create a project and wait for 30 secs to expire
+                        ShowMessageBoxWarning($"Creation of your Yeoman project was interupted as it exceeded the timeout of {yoCommandTimeOutMilliSeconds}.{Environment.NewLine}{Environment.NewLine}Your project was probably created successfully at {generationDirectory}.");
+                    }
+                    else
+                    {
+                        // TO DEBUG TEST: as above but drag cursor to here
+                        ShowMessageBoxWarning($"Creation of your Yeoman project unexpectedly ended. Please try again.{Environment.NewLine}{Environment.NewLine}Alternatively check {generationDirectory} to see if your project was created successfully.");
+                    }
                 }
                 else
                 {
+                    //If we hit here most likely a more serious error - so tell user the details 
                     process.Kill();
-                }
 
-                // TEST: gregt ???
-                ShowMessageBoxError($"{_unexpectedError} {processDetails(true)}");
+                    #region TO DEBUG TEST: make this the first command in yo.bat
+                    //for / L %% n in (1, 0, 10) do (
+                    //    echo do stuff
+                    //    exit / b
+                    //    call: stop
+                    //)
+                    //:stop
+                    //call :__stop 2 > nul
+                    //:__stop
+                    //() creates a syntax error, quits the batch
+                    #endregion
+                    ShowMessageBoxError($"{_unexpectedError} {processDetails(false)}");
+                }
             }
             else
             {
@@ -82,18 +106,18 @@ namespace NewYeomanProject
                     case 0:
                         ShowMessageBoxSuccess($"Yeoman project was successfully created at {generationDirectory}");
                         break;
-                    
-                    // TEST: change yo.bat from 'call yo' to 'call yo2'
+
+                    // TO DEBUG TEST: change yo.bat from 'call yo' to 'call yo2'
                     case 1:
                         ShowMessageBoxError($"{ProjectNotCreated}{Environment.NewLine}{Environment.NewLine}{processDetails(false)}");
                         break;
-                    
-                    // TEST: manually close command prompt (top RHS)
+
+                    // TO DEBUG TEST: manually close command prompt (top RHS)
                     case -1073741510:
                         ShowMessageBoxWarning($"{ProjectNotCreated}");
                         break;
-                        
-                    // TEST: add 'exit /b 2' as first command in yo.bat
+
+                    // TO DEBUG TEST: add 'exit /b 2' as first command in yo.bat
                     default:
                         ShowMessageBoxError($"{_unexpectedError}{Environment.NewLine}{Environment.NewLine}{processDetails(false)}");
                         break;          

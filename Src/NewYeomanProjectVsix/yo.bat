@@ -7,6 +7,7 @@ REM INSTALL YEOMAN TEMPLATE
 cd %arg1RegularProjDir%
 setlocal enableDelayedExpansion
 call yo
+pause
 
 REM Check for error (e.g. yo command not installed, npm not exists)
 IF %ERRORLEVEL% NEQ 0 GOTO ProcessError
