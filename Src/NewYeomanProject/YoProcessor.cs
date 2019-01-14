@@ -46,8 +46,6 @@ namespace NewYeomanProject
 
         private void RunYoBatchFile(string batchFileToBeOpened, string args, string generationDirectory)
         {
-            var startTime = DateTime.UtcNow;
-
             var processStartInfo = new ProcessStartInfo()
             {
                 Arguments = args,
@@ -57,15 +55,16 @@ namespace NewYeomanProject
                 WindowStyle = ProcessWindowStyle.Normal,
             };
 
-            // No need for a try/catch here - any exceptions are caught by the caller and displayed in the dialog to user
+            var startTime = DateTime.UtcNow;
+
             var process = Process.Start(processStartInfo);
+
             process.WaitForExit(yoCommandTimeOutMilliSeconds);
 
             //gregt extract outs
 
             if (process.HasExited == false)
-            {
-                
+            {               
                 if (process.Responding)
                 {
                     process.CloseMainWindow();
@@ -94,8 +93,6 @@ namespace NewYeomanProject
             }
             else
             {
-                //gregt extract out
-
                 switch (process.ExitCode)
                 {
                     // Happy path
