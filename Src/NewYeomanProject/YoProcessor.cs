@@ -61,13 +61,15 @@ namespace NewYeomanProject
 
             if (process.HasExited == false)
             {
+                //gregt extract out
+                
                 if (process.Responding)
                 {
-                    //If we hit here most likely a timeout
                     process.CloseMainWindow();
 
                     var endTime = DateTime.UtcNow;
                     var duration = (endTime - startTime).TotalMilliseconds;
+
                     if (duration > yoCommandTimeOutMilliSeconds)
                     {
                         // TO DEBUG TEST: set the timeout to, say, 30 secs, create a project and wait for 30 secs to expire
@@ -81,25 +83,17 @@ namespace NewYeomanProject
                 }
                 else
                 {
-                    //If we hit here most likely a more serious error - so tell user the details 
+                    //gregt extract out                   
                     process.Kill();
 
-                    #region TO DEBUG TEST: make this the first command in yo.bat
-                    //for / L %% n in (1, 0, 10) do (
-                    //    echo do stuff
-                    //    exit / b
-                    //    call: stop
-                    //)
-                    //:stop
-                    //call :__stop 2 > nul
-                    //:__stop
-                    //() creates a syntax error, quits the batch
-                    #endregion
+                    // TO DEBUG TEST: set the timeout to, say, 10 secs, wait for 10 secs to expire (no need to create a project) and drag cursor to here
                     ShowMessageBoxError($"{_unexpectedError} {processDetails(false)}");
                 }
             }
             else
             {
+                //gregt extract out
+
                 switch (process.ExitCode)
                 {
                     // Happy path
@@ -112,7 +106,7 @@ namespace NewYeomanProject
                         ShowMessageBoxError($"{ProjectNotCreated}{Environment.NewLine}{Environment.NewLine}{processDetails(false)}");
                         break;
 
-                    // TO DEBUG TEST: manually close command prompt (top RHS)
+                    // TO DEBUG TEST: manually close command prompt (cross in top RHS corner)
                     case -1073741510:
                         ShowMessageBoxWarning($"{ProjectNotCreated}");
                         break;
@@ -126,7 +120,7 @@ namespace NewYeomanProject
 
             string processDetails(bool includeProcessName)
             {
-                var processName = includeProcessName ? process.ProcessName : string.Empty;
+                var processName = includeProcessName ? process.ProcessName : string.Empty;//gregt move this to before process is killed
                 return $"Process {processName} with id {process?.Id} ended with exit code {process?.ExitCode}.";
             }
         }
