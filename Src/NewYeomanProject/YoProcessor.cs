@@ -11,7 +11,7 @@ namespace NewYeomanProject
     {
         public string ProjectNotCreated = "Yeoman project was not created.";
         ///////////////////////////private int yoCommandTimeOutMinutes { get { return yoCommandTimeOutSeconds / 60; } }
-        private int yoCommandTimeOutSeconds = 15;
+        private int yoCommandTimeOutSeconds = 20;
         private int yoCommandTimeOutMilliSeconds { get { return yoCommandTimeOutSeconds * 1000; } }
         private string _unexpectedError = "An unexpected error has occurred.";
 
@@ -56,72 +56,78 @@ namespace NewYeomanProject
             };
 
             var startTime = DateTime.UtcNow;
-
             var process = Process.Start(processStartInfo);
-
             process.WaitForExit(yoCommandTimeOutMilliSeconds);
 
-            //gregt extract outs
-
             if (process.HasExited == false)
-            {               
-                if (process.Responding)
+            {
+                HandleAbnormalExit(generationDirectory, startTime, process);
+            }
+            else
+            {
+                HandleNormalExit(generationDirectory, process);
+            }
+        }
+
+        private void HandleAbnormalExit(string generationDirectory, DateTime startTime, Process process)
+        {
+            if (process.Responding)
+            {
+                process.CloseMainWindow();
+
+                var endTime = DateTime.UtcNow;
+                var duration = (endTime - startTime).TotalMilliseconds;
+
+                if (duration > yoCommandTimeOutMilliSeconds)
                 {
-                    process.CloseMainWindow();
-
-                    var endTime = DateTime.UtcNow;
-                    var duration = (endTime - startTime).TotalMilliseconds;
-
-                    if (duration > yoCommandTimeOutMilliSeconds)
-                    {
-                        // TO DEBUG TEST: set the timeout to, say, 10 secs, wait for 10 secs to expire (no need to create a project)
-                        ShowMessageBoxWarning($"Creation of your Yeoman project was interupted as it exceeded the timeout of {yoCommandTimeOutSeconds}.{Environment.NewLine}{Environment.NewLine}Your project was probably created successfully at {generationDirectory}.");
-                    }
-                    else
-                    {
-                        // TO DEBUG TEST: as above but drag cursor to here
-                        ShowMessageBoxWarning($"Creation of your Yeoman project unexpectedly ended. Please try again.{Environment.NewLine}{Environment.NewLine}Alternatively check {generationDirectory} to see if your project was created successfully.");
-                    }
+                    // TO DEBUG TEST: set the timeout to, say, 10 secs, wait for 10 secs to expire (no need to create a project)
+                    ShowMessageBoxWarning($"Creation of your Yeoman project was interupted as it exceeded the timeout of {yoCommandTimeOutSeconds}.{Environment.NewLine}{Environment.NewLine}Your project was probably created successfully at {generationDirectory}.");
                 }
                 else
                 {
-                    process.Kill();
-
                     // TO DEBUG TEST: as above but drag cursor to here
-                    ShowMessageBoxError($"{_unexpectedError} {processDetails(false)}");
+                    ShowMessageBoxWarning($"Creation of your Yeoman project unexpectedly ended. Please try again.{Environment.NewLine}{Environment.NewLine}Alternatively check {generationDirectory} to see if your project was created successfully.");
                 }
             }
             else
             {
-                switch (process.ExitCode)
-                {
-                    // Happy path
-                    case 0:
-                        ShowMessageBoxSuccess($"Yeoman project was successfully created at {generationDirectory}");
-                        break;
+                process.Kill();
 
-                    // TO DEBUG TEST: change yo.bat from 'call yo' to 'call yo2'
-                    case 1:
-                        ShowMessageBoxError($"{ProjectNotCreated}{Environment.NewLine}{Environment.NewLine}{processDetails(false)}");
-                        break;
-
-                    // TO DEBUG TEST: manually close command prompt (cross in top RHS corner)
-                    case -1073741510:
-                        ShowMessageBoxWarning($"{ProjectNotCreated}");
-                        break;
-
-                    // TO DEBUG TEST: add 'exit /b 2' as first command in yo.bat
-                    default:
-                        ShowMessageBoxError($"{_unexpectedError}{Environment.NewLine}{Environment.NewLine}{processDetails(false)}");
-                        break;          
-                }
+                // TO DEBUG TEST: as above but drag cursor to here
+                ShowMessageBoxError($"{_unexpectedError} {GetProcessDetails(false, process)}");
             }
+        }
 
-            string processDetails(bool includeProcessName)
+        private void HandleNormalExit(string generationDirectory, Process process)
+        {
+            switch (process.ExitCode)
             {
-                var processName = includeProcessName ? process.ProcessName : string.Empty;//gregt move this to before process is killed
-                return $"Process {processName} with id {process?.Id} ended with exit code {process?.ExitCode}.";
+                // Happy path
+                case 0:
+                    ShowMessageBoxSuccess($"Yeoman project was successfully created at {generationDirectory}");
+                    break;
+
+                // TO DEBUG TEST: change yo.bat from 'call yo' to 'call yo2'
+                case 1:
+                    ShowMessageBoxError($"{ProjectNotCreated}{Environment.NewLine}{Environment.NewLine}{GetProcessDetails(false, process)}");
+                    break;
+
+                // TO DEBUG TEST: manually close command prompt (cross in top RHS corner)
+                case -1073741510:
+                    ShowMessageBoxWarning($"{ProjectNotCreated}");
+                    break;
+
+                // TO DEBUG TEST: add 'exit /b 2' as first command in yo.bat
+                default:
+                    ShowMessageBoxError($"{_unexpectedError}{Environment.NewLine}{Environment.NewLine}{GetProcessDetails(false, process)}");
+                    break;
             }
+        }
+
+        private string GetProcessDetails(bool includeProcessName, Process process)
+        {
+            var processName = includeProcessName ? process.ProcessName : string.Empty;//gregt move this to before process is killed
+            return $"Process {processName} with id {process?.Id} ended with exit code {process?.ExitCode}.";
         }
 
         public void ShowMessageBoxError(string messageBoxText)
