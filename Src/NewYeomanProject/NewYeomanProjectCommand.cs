@@ -2,7 +2,6 @@ using EnvDTE;
 using Microsoft.VisualStudio.Shell;
 using System;
 using System.ComponentModel.Design;
-using System.Windows;
 using Task = System.Threading.Tasks.Task;
 
 namespace NewYeomanProject
@@ -40,11 +39,8 @@ namespace NewYeomanProject
             }
             catch (Exception ex)
             {
-                MessageBox.Show(
-                    $"Yeoman project was not created.{Environment.NewLine}{Environment.NewLine}{ex.ToString()}.",//gregt dedupe
-                    "New Yeoman Project Error",//gregt dedupe
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error);
+                var yoProcessor = new YoProcessor();
+                yoProcessor.ShowMessageBoxError($"{yoProcessor.ProjectNotCreated}{Environment.NewLine}{Environment.NewLine}{ex.ToString()}.");
             }
         }
 

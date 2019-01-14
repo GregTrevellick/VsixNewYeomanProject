@@ -9,6 +9,9 @@ namespace NewYeomanProject
 {
     public class YoProcessor : IDisposable
     {
+        public string ProjectNotCreated = "Yeoman project was not created.";
+        private string _unexpectedError = "An unexpected error has occurred.";
+
         public YoProcessor()
         {
             ThreadHelper.ThrowIfNotOnUIThread();
@@ -68,49 +71,64 @@ namespace NewYeomanProject
                     process.Kill();
                 }
 
-                MessageBox.Show(
-                    $"An unexpected error has occurred.{Environment.NewLine}{Environment.NewLine}Process {process?.ProcessName} with id {process?.Id} ended with exit code {process?.ExitCode}.",//gregt dedupe
-                    "New Yeoman Project Error",//gregt dedupe
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error);
+                // TEST: gregt ???
+                ShowMessageBoxError($"{_unexpectedError} {processDetails(true)}");
             }
             else
             {
                 switch (process.ExitCode)
                 {
-                    // all good
+                    // Happy path
                     case 0:
-                        MessageBox.Show(
-                            $"Yeoman project was successfully created at {generationDirectory}",//gregt dedupe
-                            "New Yeoman Project Success",//gregt dedupe
-                            MessageBoxButton.OK,
-                            MessageBoxImage.Information);
+                        ShowMessageBoxSuccess($"Yeoman project was successfully created at {generationDirectory}");
                         break;
-                    // yo command not found
+                    
+                    // TEST: change yo.bat from 'call yo' to 'call yo2'
                     case 1:
-                        MessageBox.Show(
-                            $"Yeoman project was not created.{Environment.NewLine}{Environment.NewLine}Process {process.Id} ended with exit code {process.ExitCode}.",//gregt dedupe
-                            "New Yeoman Project Error",//gregt dedupe
-                            MessageBoxButton.OK,
-                            MessageBoxImage.Error);
+                        ShowMessageBoxError($"{ProjectNotCreated}{Environment.NewLine}{Environment.NewLine}{processDetails(false)}");
                         break;
-                    // user closed cmd prompt prematurely
+                    
+                    // TEST: manually close command prompt (top RHS)
                     case -1073741510:
-                        MessageBox.Show(
-                            $"Yeoman project was not created.",//gregt dedupe
-                            "New Yeoman Project Warning",//gregt dedupe
-                            MessageBoxButton.OK,
-                            MessageBoxImage.Warning);
+                        ShowMessageBoxWarning($"{ProjectNotCreated}");
                         break;
+                        
+                    // TEST: add 'exit /b 2' as first command in yo.bat
                     default:
-                        MessageBox.Show(
-                            $"An unexpected error has occurred.{Environment.NewLine}{Environment.NewLine}Process {process?.ProcessName} with id {process?.Id} ended with exit code {process?.ExitCode}.",//gregt dedupe
-                            "New Yeoman Project Error",//gregt dedupe
-                            MessageBoxButton.OK,
-                            MessageBoxImage.Error);
+                        ShowMessageBoxError($"{_unexpectedError}{Environment.NewLine}{Environment.NewLine}{processDetails(false)}");
                         break;          
                 }
             }
+
+            string processDetails(bool includeProcessName)
+            {
+                var processName = includeProcessName ? process.ProcessName : string.Empty;
+                return $"Process {processName} with id {process?.Id} ended with exit code {process?.ExitCode}.";
+            }
+        }
+
+        public void ShowMessageBoxError(string messageBoxText)
+        {
+            ShowMessageBox(messageBoxText, "Error", MessageBoxImage.Error);
+        }
+
+        private void ShowMessageBoxSuccess(string messageBoxText)
+        {
+            ShowMessageBox(messageBoxText, "Success", MessageBoxImage.Information);
+        }
+
+        private void ShowMessageBoxWarning(string messageBoxText)
+        {
+            ShowMessageBox(messageBoxText, "Warning", MessageBoxImage.Warning);
+        }
+
+        private void ShowMessageBox(string messageBoxText, string caption, MessageBoxImage messageBoxImage)
+        {
+            MessageBox.Show(
+                messageBoxText,
+                $"New Yeoman Project {caption}",//gregt get this string from resx #110
+                MessageBoxButton.OK,
+                messageBoxImage);
         }
 
         public void Dispose()
