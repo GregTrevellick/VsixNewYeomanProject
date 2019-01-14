@@ -9,6 +9,7 @@ namespace NewYeomanProject
 {
     public class YoProcessor : IDisposable
     {
+        private string _checkGenerationDirectory { get { return $"Check {generationDirectory} to see if your project was created successfully." } }
         public string ProjectNotCreated = "Yeoman project was not created.";
         private string _unexpectedError = "An unexpected error has occurred.";
         private int _yoCommandTimeOutSeconds = 120;
@@ -119,12 +120,12 @@ namespace NewYeomanProject
                 var yoCommandTimeOutText = _yoCommandTimeOutSeconds <= 60 ?
                     $"{_yoCommandTimeOutSeconds} seconds" :
                     $"{_yoCommandTimeOutSeconds / 60} minutes";
-                ShowMessageBoxWarning($"Creation of your Yeoman project was interupted as it exceeded the timeout of {yoCommandTimeOutText}.{Environment.NewLine}{Environment.NewLine}Your project was probably created successfully at {generationDirectory}.");//gregt wording
+                ShowMessageBoxWarning($"Creation of your Yeoman project was interupted as it exceeded the timeout of {yoCommandTimeOutText}.{Environment.NewLine}{Environment.NewLine}{_checkGenerationDirectory }");
             }
             else
             {
                 // TO DEBUG TEST: as above but drag cursor to here
-                ShowMessageBoxError($"Creation of your Yeoman project unexpectedly ended. Please try again.{Environment.NewLine}{Environment.NewLine}Alternatively check {generationDirectory} to see if your project was created successfully.");//gregt wording
+                ShowMessageBoxError($"Creation of your Yeoman project unexpectedly ended. Please try again.{Environment.NewLine}{Environment.NewLine}{_checkGenerationDirectory }");
             }
         }
 
