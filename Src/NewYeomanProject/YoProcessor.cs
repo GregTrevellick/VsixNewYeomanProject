@@ -10,10 +10,9 @@ namespace NewYeomanProject
     public class YoProcessor : IDisposable
     {
         public string ProjectNotCreated = "Yeoman project was not created.";
-        ///////////////////////////private int yoCommandTimeOutMinutes { get { return yoCommandTimeOutSeconds / 60; } }
-        private int yoCommandTimeOutSeconds = 20;
-        private int yoCommandTimeOutMilliSeconds { get { return yoCommandTimeOutSeconds * 1000; } }
         private string _unexpectedError = "An unexpected error has occurred.";
+        private int _yoCommandTimeOutSeconds = 120;
+        private int _yoCommandTimeOutMilliSeconds { get { return _yoCommandTimeOutSeconds * 1000; } }
 
         public YoProcessor()
         {
@@ -57,7 +56,7 @@ namespace NewYeomanProject
 
             var startTime = DateTime.UtcNow;
             var process = Process.Start(processStartInfo);
-            process.WaitForExit(yoCommandTimeOutMilliSeconds);
+            process.WaitForExit(_yoCommandTimeOutMilliSeconds);
 
             if (process.HasExited)
             {
@@ -114,10 +113,13 @@ namespace NewYeomanProject
             var endTime = DateTime.UtcNow;
             var duration = (endTime - startTime).TotalMilliseconds;
 
-            if (duration > yoCommandTimeOutMilliSeconds)
+            if (duration > _yoCommandTimeOutMilliSeconds)
             {
                 // TO DEBUG TEST: set the timeout to, say, 10 secs, wait for 10 secs to expire (no need to create a project)
-                ShowMessageBoxWarning($"Creation of your Yeoman project was interupted as it exceeded the timeout of {yoCommandTimeOutSeconds}.{Environment.NewLine}{Environment.NewLine}Your project was probably created successfully at {generationDirectory}.");//gregt wording
+                var yoCommandTimeOutText = _yoCommandTimeOutSeconds <= 60 ?
+                    $"{_yoCommandTimeOutSeconds} seconds" :
+                    $"{_yoCommandTimeOutSeconds / 60} minutes";
+                ShowMessageBoxWarning($"Creation of your Yeoman project was interupted as it exceeded the timeout of {yoCommandTimeOutText}.{Environment.NewLine}{Environment.NewLine}Your project was probably created successfully at {generationDirectory}.");//gregt wording
             }
             else
             {
