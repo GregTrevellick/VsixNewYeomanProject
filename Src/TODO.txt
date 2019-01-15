@@ -16,3 +16,5 @@ Subject to take up
 f-key shortcut ctl shift Y
 allow user to switch file directory
 conditionally launch visual studio if a .sln or single .csproj file created ?
+add option to disable timeout
+put timeout into options
