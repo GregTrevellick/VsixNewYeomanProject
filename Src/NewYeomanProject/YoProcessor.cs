@@ -10,11 +10,15 @@ namespace NewYeomanProject
     public class YoProcessor : IDisposable
     {
         private string _checkGenerationDirectory { get { return $"Check {_newProjectDirectory} to see if your project was created successfully."; } }
+        private string _exitCode;
         private string _newProjectDirectory;
-        public string ProjectNotCreated = "Yeoman project was not created.";
+        private int _processId;
+        private string _processName;
         private string _unexpectedError = "An unexpected error has occurred.";
         private int _yoCommandTimeOutSeconds = 10;//gregt set to 15 minutes
         private int _yoCommandTimeOutMilliSeconds { get { return _yoCommandTimeOutSeconds * 1000; } }
+
+        public string ProjectNotCreated = "Yeoman project was not created.";
 
         public YoProcessor()
         {
@@ -64,11 +68,15 @@ namespace NewYeomanProject
 
             var startTime = DateTime.UtcNow;
             var process = Process.Start(processStartInfo);
+
+            _processId = process.Id;
+            _processName = process.ProcessName;
+
             process.WaitForExit(_yoCommandTimeOutMilliSeconds);
 
             if (process.HasExited)
             {
-                HandleNormalExit(generationDirectory, process);
+                HandleNormalExit(generationDirectory, process.ExitCode);
             }
             else
             {
@@ -76,9 +84,9 @@ namespace NewYeomanProject
             }
         }
 
-        private void HandleNormalExit(string generationDirectory, Process process)
+        private void HandleNormalExit(string generationDirectory, int exitCode)
         {
-            switch (process.ExitCode)
+            switch (exitCode)
             {
                 // Happy path
                 case 0:
@@ -87,7 +95,7 @@ namespace NewYeomanProject
 
                 // TO DEBUG TEST: change yo.bat from 'call yo' to 'call yo2'
                 case 1:
-                    ShowMessageBoxError($"{ProjectNotCreated}{Environment.NewLine}{Environment.NewLine}{GetProcessDetails(false, process)}");
+                    ShowMessageBoxError($"{ProjectNotCreated}{Environment.NewLine}{Environment.NewLine}{GetProcessDetails()}");
                     break;
 
                 // TO DEBUG TEST: manually close command prompt (cross in top RHS corner)
@@ -97,7 +105,7 @@ namespace NewYeomanProject
 
                 // TO DEBUG TEST: add 'exit /b 2' as first command in yo.bat
                 default:
-                    ShowMessageBoxError($"{_unexpectedError}{Environment.NewLine}{Environment.NewLine}{GetProcessDetails(false, process)}");
+                    ShowMessageBoxError($"{_unexpectedError}{Environment.NewLine}{Environment.NewLine}{GetProcessDetails()}");
                     break;
             }
         }
@@ -141,13 +149,12 @@ namespace NewYeomanProject
             process.Kill();
 
             // TO DEBUG TEST: as above but drag cursor to here
-            ShowMessageBoxError($"{_unexpectedError} {GetProcessDetails(false, process)}");
+            ShowMessageBoxError($"{_unexpectedError} {GetProcessDetails()}");
         }
 
-        private string GetProcessDetails(bool includeProcessName, Process process)
+        private string GetProcessDetails()
         {
-            var processName = includeProcessName ? process.ProcessName : string.Empty;//gregt move this to before process is killed
-            return $"Process {processName} with id {process?.Id} ended with exit code {process?.ExitCode}.";
+            return $"Process '{_processName}' with id {_processId} ended with exit code {_exitCode}.";
         }
 
         public void ShowMessageBoxError(string messageBoxText)
