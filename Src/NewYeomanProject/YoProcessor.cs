@@ -10,7 +10,7 @@ namespace NewYeomanProject
     public class YoProcessor : IDisposable
     {
         private string _checkGenerationDirectory { get { return $"Check {_newProjectDirectory} to see if your project was created successfully."; } }
-        private string _exitCode;
+        private int _exitCode;
         private string _newProjectDirectory;
         private int _processId;
         private string _processName;
@@ -74,9 +74,11 @@ namespace NewYeomanProject
 
             process.WaitForExit(_yoCommandTimeOutMilliSeconds);
 
+            _exitCode = process.ExitCode;
+
             if (process.HasExited)
             {
-                HandleNormalExit(generationDirectory, process.ExitCode);
+                HandleNormalExit(generationDirectory);
             }
             else
             {
@@ -84,9 +86,9 @@ namespace NewYeomanProject
             }
         }
 
-        private void HandleNormalExit(string generationDirectory, int exitCode)
+        private void HandleNormalExit(string generationDirectory)
         {
-            switch (exitCode)
+            switch (_exitCode)
             {
                 // Happy path
                 case 0:
