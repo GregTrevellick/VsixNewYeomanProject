@@ -9,6 +9,7 @@ namespace NewYeomanProject
 {
     public class YoProcessor : IDisposable
     {
+        private readonly string _captionPrefix = "New Yeoman Project";
         private string _checkGenerationDirectory { get { return $"Check {_newProjectDirectory} to see if your project was created successfully."; } }
         private int _exitCode;
         private readonly string _newProjectDirectory;
@@ -180,7 +181,7 @@ namespace NewYeomanProject
         {
             MessageBox.Show(
                 messageBoxText,
-                $"New Yeoman Project {caption}",//gregt get this string from resx #110
+                $"{_captionPrefix} {caption}",
                 MessageBoxButton.OK,
                 messageBoxImage);
         }
