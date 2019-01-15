@@ -32,9 +32,9 @@ namespace NewYeomanProject
             try
             {
                 using (var dteContextHelper = new DteContextHelper(dte))
-                using (var yoProcessor = new YoProcessor())
+                using (var yoProcessor = new YoProcessor(dteContextHelper.ProjectsLocation))
                 {
-                    yoProcessor.Generate(dteContextHelper.ProjectsLocation);
+                    yoProcessor.Generate();
                 }
             }
             catch (Exception ex)

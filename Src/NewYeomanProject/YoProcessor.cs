@@ -9,18 +9,25 @@ namespace NewYeomanProject
 {
     public class YoProcessor : IDisposable
     {
-        private string _checkGenerationDirectory { get { return $"Check {generationDirectory} to see if your project was created successfully." } }
+        private string _checkGenerationDirectory { get { return $"Check {newProjectDirectory} to see if your project was created successfully."; } }
+        private string newProjectDirectory;
         public string ProjectNotCreated = "Yeoman project was not created.";
         private string _unexpectedError = "An unexpected error has occurred.";
-        private int _yoCommandTimeOutSeconds = 120;
+        private int _yoCommandTimeOutSeconds = 10;//gregt set to 15 minutes
         private int _yoCommandTimeOutMilliSeconds { get { return _yoCommandTimeOutSeconds * 1000; } }
 
         public YoProcessor()
         {
             ThreadHelper.ThrowIfNotOnUIThread();
         }
+        
+        public YoProcessor(string anewProjectDirectory)
+        {
+            ThreadHelper.ThrowIfNotOnUIThread();
+            newProjectDirectory = anewProjectDirectory;
+        }
 
-        public void Generate(string newProjectDirectory)
+        public void Generate()
         {
             GenerateYeomanProject(newProjectDirectory);
         }
