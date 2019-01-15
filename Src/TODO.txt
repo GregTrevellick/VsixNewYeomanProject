@@ -1,13 +1,11 @@
 check badges
 revise screenshots/gif to include success popup message
-gregt dedupe
 
 
 
 angbas/omni
 ===========
 add hyperlink to new>yeoman>project vsmp page to omni/angbas vsmp pages
-PR for matt
 add exit /b 1 to angbas & omni
 add fuller message boxes to angbas/omni
 
