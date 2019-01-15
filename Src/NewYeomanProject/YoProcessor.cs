@@ -15,7 +15,7 @@ namespace NewYeomanProject
         private int _processId;
         private string _processName;
         private string _unexpectedError = "An unexpected error has occurred.";
-        private int _yoCommandTimeOutSeconds = 10;//gregt set to 15 minutes
+        private int _yoCommandTimeOutSeconds = 15*60;
         private int _yoCommandTimeOutMilliSeconds { get { return _yoCommandTimeOutSeconds * 1000; } }
 
         public string ProjectNotCreated = "Yeoman project was not created.";
