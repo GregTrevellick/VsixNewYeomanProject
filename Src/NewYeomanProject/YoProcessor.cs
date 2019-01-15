@@ -11,10 +11,10 @@ namespace NewYeomanProject
     {
         private string _checkGenerationDirectory { get { return $"Check {_newProjectDirectory} to see if your project was created successfully."; } }
         private int _exitCode;
-        private string _newProjectDirectory;
+        private readonly string _newProjectDirectory;
         private int _processId;
         private string _processName;
-        private string _unexpectedError = "An unexpected error has occurred.";
+        private readonly string _unexpectedError = "An unexpected error has occurred.";
         private int _yoCommandTimeOutSeconds = 15*60;
         private int _yoCommandTimeOutMilliSeconds { get { return _yoCommandTimeOutSeconds * 1000; } }
 
