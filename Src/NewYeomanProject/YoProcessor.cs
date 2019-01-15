@@ -15,7 +15,7 @@ namespace NewYeomanProject
         private int _processId;
         private string _processName;
         private readonly string _unexpectedError = "An unexpected error has occurred.";
-        private int _yoCommandTimeOutSeconds = 15*60;
+        private readonly int _yoCommandTimeOutSeconds = 15 * 60;
         private int _yoCommandTimeOutMilliSeconds { get { return _yoCommandTimeOutSeconds * 1000; } }
 
         public string LineBreak = $"{Environment.NewLine}{Environment.NewLine}";
@@ -138,6 +138,7 @@ namespace NewYeomanProject
                 var yoCommandTimeOutText = _yoCommandTimeOutSeconds <= 60 ?
                     $"{_yoCommandTimeOutSeconds} seconds" :
                     $"{_yoCommandTimeOutSeconds / 60} minutes";
+
                 ShowMessageBoxWarning($"Creation of your Yeoman project was interupted as it exceeded the timeout of {yoCommandTimeOutText}.{LineBreak}{_checkGenerationDirectory }");
             }
             else
