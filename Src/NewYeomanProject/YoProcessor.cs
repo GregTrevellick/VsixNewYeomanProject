@@ -18,6 +18,7 @@ namespace NewYeomanProject
         private int _yoCommandTimeOutSeconds = 15*60;
         private int _yoCommandTimeOutMilliSeconds { get { return _yoCommandTimeOutSeconds * 1000; } }
 
+        public string LineBreak = $"{Environment.NewLine}{Environment.NewLine}";
         public string ProjectNotCreated = "Yeoman project was not created.";
 
         public YoProcessor()
@@ -97,7 +98,7 @@ namespace NewYeomanProject
 
                 // TO DEBUG TEST: change yo.bat from 'call yo' to 'call yo2'
                 case 1:
-                    ShowMessageBoxError($"{ProjectNotCreated}{Environment.NewLine}{Environment.NewLine}{GetProcessDetails()}");
+                    ShowMessageBoxError($"{ProjectNotCreated}{LineBreak}{GetProcessDetails()}");
                     break;
 
                 // TO DEBUG TEST: manually close command prompt (cross in top RHS corner)
@@ -107,7 +108,7 @@ namespace NewYeomanProject
 
                 // TO DEBUG TEST: add 'exit /b 2' as first command in yo.bat
                 default:
-                    ShowMessageBoxError($"{_unexpectedError}{Environment.NewLine}{Environment.NewLine}{GetProcessDetails()}");
+                    ShowMessageBoxError($"{_unexpectedError}{LineBreak}{GetProcessDetails()}");
                     break;
             }
         }
@@ -137,12 +138,12 @@ namespace NewYeomanProject
                 var yoCommandTimeOutText = _yoCommandTimeOutSeconds <= 60 ?
                     $"{_yoCommandTimeOutSeconds} seconds" :
                     $"{_yoCommandTimeOutSeconds / 60} minutes";
-                ShowMessageBoxWarning($"Creation of your Yeoman project was interupted as it exceeded the timeout of {yoCommandTimeOutText}.{Environment.NewLine}{Environment.NewLine}{_checkGenerationDirectory }");
+                ShowMessageBoxWarning($"Creation of your Yeoman project was interupted as it exceeded the timeout of {yoCommandTimeOutText}.{LineBreak}{_checkGenerationDirectory }");
             }
             else
             {
                 // TO DEBUG TEST: as above but drag cursor to here
-                ShowMessageBoxError($"Creation of your Yeoman project unexpectedly ended. Please try again.{Environment.NewLine}{Environment.NewLine}{_checkGenerationDirectory }");
+                ShowMessageBoxError($"Creation of your Yeoman project unexpectedly ended. Please try again.{LineBreak}{_checkGenerationDirectory }");
             }
         }
 

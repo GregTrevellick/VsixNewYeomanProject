@@ -39,8 +39,8 @@ namespace NewYeomanProject
             }
             catch (Exception ex)
             {
-                var yoProcessor = new YoProcessor();
-                yoProcessor.ShowMessageBoxError($"{yoProcessor.ProjectNotCreated}{Environment.NewLine}{Environment.NewLine}{ex.ToString()}.");
+                var yp = new YoProcessor();
+                yp.ShowMessageBoxError($"{yp.ProjectNotCreated}{yp.LineBreak}{ex.ToString()}.");
             }
         }
 
