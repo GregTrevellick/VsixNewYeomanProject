@@ -47,10 +47,13 @@
 
 <!--BadgesEND-->
 
-
 A Visual Studio IDE extension for creating new [Yeoman](https://yeoman.io/) scaffolded projects.
 
 See the extension [here](https://marketplace.visualstudio.com/items?itemName=GregTrevellick.NewYeomanProject).
+
+![Vsix Extension Preview 90X90](Src/NewYeomanProjectVsix/Resources/VsixExtensionPreview_90x90.png)
+
+![Screen2](Src/NewYeomanProjectVsix/Resources/screen2.gif)
 
 ## Give a Star! :star:
 If you like or are using this project to learn or start your solution, please give it a star. Thanks!
