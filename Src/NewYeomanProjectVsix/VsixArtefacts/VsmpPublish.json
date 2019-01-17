@@ -23,7 +23,7 @@
   "overview": "VsmpReadMe.md", //vsmp page content
   "priceCategory": "free",
   "publisher": "GregTrevellick",
-  "private": true,
+  "private": false,
   "qna": true,
   "repo": "https://github.com/GregTrevellick/NewYeomanProject"
 }
