@@ -99,7 +99,7 @@
     <PackageReference Include="Microsoft.VisualStudio.SDK.Analyzers">
       <Version>15.8.36</Version>
     </PackageReference>
-    <PackageReference Include="Microsoft.VSSDK.BuildTools" Version="15.8.3252">
+    <PackageReference Include="Microsoft.VSSDK.BuildTools" Version="16.1.42">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
