@@ -7,8 +7,8 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/b7496ea552ed4856b6875d1412dbe48f)](https://www.codacy.com/project/gtrevellick/VsixNewYeomanProject/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=GregTrevellick/VsixNewYeomanProject&amp;utm_campaign=Badge_Grade_Dashboard)
 [![CodeBeat](https://codebeat.co/badges/undefined)](https://codebeat.co/projects/github-com-gregtrevellick-vsixnewyeomanproject-master)
 [![CodeFactor](https://www.codefactor.io/repository/github/GregTrevellick/VsixNewYeomanProject/badge)](https://www.codefactor.io/repository/github/GregTrevellick/VsixNewYeomanProject)
-[![LGTM Alerts](https://img.shields.io/lgtm/alerts/g/GregTrevellick/VsixNewYeomanProject.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/GregTrevellick/VsixNewYeomanProject/alerts/)
-[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/GregTrevellick/VsixNewYeomanProject.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/GregTrevellick/VsixNewYeomanProject/context:javascript)
+<!-- no md -->
+<!-- no md -->
 [![GitHub top language](https://img.shields.io/github/languages/top/GregTrevellick/VsixNewYeomanProject.svg)](https://github.com/GregTrevellick/VsixNewYeomanProject)
 [![Github language count](https://img.shields.io/github/languages/count/GregTrevellick/VsixNewYeomanProject.svg)](https://github.com/GregTrevellick/VsixNewYeomanProject)
 [![GitHub issues](https://img.shields.io/github/issues-raw/GregTrevellick/VsixNewYeomanProject.svg)](https://github.com/GregTrevellick/VsixNewYeomanProject/issues)
