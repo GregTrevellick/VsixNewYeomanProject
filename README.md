@@ -5,13 +5,8 @@
 [![Read Me Synchronizer](https://img.shields.io/badge/-powered%20by%20ReadMeSynchronizer-brightgreen.svg)](https://github.com/GregTrevellick/ReadMeSynchronizer)
 [![BetterCodeHub compliance](https://bettercodehub.com/edge/badge/GregTrevellick/VsixNewYeomanProject?branch=master)](https://bettercodehub.com/results/GregTrevellick/VsixNewYeomanProject)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/b7496ea552ed4856b6875d1412dbe48f)](https://www.codacy.com/project/gtrevellick/VsixNewYeomanProject/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=GregTrevellick/VsixNewYeomanProject&amp;utm_campaign=Badge_Grade_Dashboard)
-<!-- no md -->
-[![CodeFactor](https://www.codefactor.io/repository/github/GregTrevellick/VsixNewYeomanProject/badge)](https://www.codefactor.io/repository/github/GregTrevellick/VsixNewYeomanProject)
-<!-- no md -->
-<!-- no md -->
-<!-- no md -->
-<!-- no md -->
-[![GitHub top language](https://img.shields.io/github/languages/top/GregTrevellick/VsixNewYeomanProject.svg)](https://github.com/GregTrevellick/VsixNewYeomanProject)
+ [![CodeFactor](https://www.codefactor.io/repository/github/GregTrevellick/VsixNewYeomanProject/badge)](https://www.codefactor.io/repository/github/GregTrevellick/VsixNewYeomanProject)
+    [![GitHub top language](https://img.shields.io/github/languages/top/GregTrevellick/VsixNewYeomanProject.svg)](https://github.com/GregTrevellick/VsixNewYeomanProject)
 [![Github language count](https://img.shields.io/github/languages/count/GregTrevellick/VsixNewYeomanProject.svg)](https://github.com/GregTrevellick/VsixNewYeomanProject)
 [![GitHub issues](https://img.shields.io/github/issues-raw/GregTrevellick/VsixNewYeomanProject.svg)](https://github.com/GregTrevellick/VsixNewYeomanProject/issues)
 [![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/GregTrevellick/VsixNewYeomanProject.svg)](https://github.com/GregTrevellick/VsixNewYeomanProject/pulls)
@@ -28,16 +23,14 @@
 [![Sonar&metric=vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=GregTrevellick_VsixNewYeomanProject&metric=vulnerabilities)](https://sonarcloud.io/component_measures?id=GregTrevellick_VsixNewYeomanProject&metric=vulnerabilities)
 [![Appveyor Build status](https://ci.appveyor.com/api/projects/status/awv70p92uu0u84k9?svg=true)](https://ci.appveyor.com/project/GregTrevellick/VsixNewYeomanProject)
 [![Appveyor unit tests](https://img.shields.io/appveyor/tests/GregTrevellick/VsixNewYeomanProject.svg)](https://ci.appveyor.com/project/GregTrevellick/VsixNewYeomanProject/build/tests)
-<!-- no md -->
-[![Hound](https://img.shields.io/badge/hound_ci-checked-brightgreen.svg)](https://houndci.com/)
+ [![Hound](https://img.shields.io/badge/hound_ci-checked-brightgreen.svg)](https://houndci.com/)
 [![Access Lint github](https://img.shields.io/badge/a11y-checked-brightgreen.svg)](https://www.accesslint.com)
 [![ImgBot](https://img.shields.io/badge/images-optimized-brightgreen.svg)](https://imgbot.net/)
 [![Renovate Bot github](https://img.shields.io/badge/renovatebot-checked-brightgreen.svg)](https://renovatebot.com/)
 [![Charity Ware](https://img.shields.io/badge/charity%20ware-thank%20you-brightgreen.svg)](https://github.com/GregTrevellick/MiscellaneousArtefacts/wiki/Charity-Ware)
 [![License](https://img.shields.io/github/license/gittools/gitlink.svg)](/LICENSE.txt)
 [![Subscribe](https://img.shields.io/badge/subscribe%20to%20receive%20notificatons-grey.svg)](https://github.com/GregTrevellick/VsixNewYeomanProject/subscription)
-<!-- no md -->
-
+ 
 [![Visual Studio Marketplace version](https://img.shields.io/badge/-NewYeomanProject-%23e2165e.svg)](https://marketplace.visualstudio.com/items?itemName=GregTrevellick.NewYeomanProject)
 [![Visual Studio Marketplace downloads](https://vsmarketplacebadge.apphb.com/installs/GregTrevellick.NewYeomanProject.svg)](https://marketplace.visualstudio.com/items?itemName=GregTrevellick.NewYeomanProject)
 [![Visual Studio Marketplace ratings](https://vsmarketplacebadge.apphb.com/rating/GregTrevellick.NewYeomanProject.svg)](https://marketplace.visualstudio.com/items?itemName=GregTrevellick.NewYeomanProject)
