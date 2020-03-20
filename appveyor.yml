@@ -16,7 +16,10 @@ before_build:
     # The only solution is to prevent PR builds initiating Sonar analysis using powershell (see https://medium.com/@stef.heyenrath/how-to-fix-sonarcloud-issue-in-a-github-pr-when-using-appveyor-integration-8909b49406b4).
     #-                                                      dotnet sonarscanner begin /key:"VsixNewYeomanProject" /d:"sonar.host.url=https://sonarcloud.io" /d:"sonar.login=%my_encrypted_sonarqube_token%" /o:"gregtrevellick-github"
     #- ps: 'if (-Not $env:APPVEYOR_PULL_REQUEST_NUMBER) { & dotnet sonarscanner begin /key:"VsixNewYeomanProject" /d:"sonar.host.url=https://sonarcloud.io" /d:"sonar.login=%my_encrypted_sonarqube_token%" /o:"gregtrevellick-github" }'
-    - ps: 'if (-Not $env:APPVEYOR_PULL_REQUEST_NUMBER) { & dotnet sonarscanner begin /key:"VsixNewYeomanProject" /d:"sonar.host.url=https://sonarcloud.io" /d:"sonar.login=$env:my_encrypted_sonarqube_token" /o:"gregtrevellick-github" /d:"sonar.organization=gregtrevellick-github" }'
+    - ps: 'if (-Not $env:APPVEYOR_PULL_REQUEST_NUMBER) { & dotnet sonarscanner begin /key:"VsixNewYeomanProject" /d:"sonar.host.url=https://sonarcloud.io" /d:"sonar.login=$env:my_encrypted_sonarqube_token" /o:="gregtrevellick-github" }'
+    #Please use the parameter prefix '/o:' to define the organization of the SonarQube project instead of injecting this organization with the help of the 'sonar.organization' property.
+    #Please use the parameter prefix '/o:' to define the organization of the SonarQube project instead of injecting this organization with the help of the 'sonar.organization' property.
+    #dotnet.exe : 07:27:42.375  07:27:42.372  Unrecognized command line argument: /ogregtrevellick-github
 build:
     project: Src/VsixNewYeomanProject.sln
     verbosity: minimal
