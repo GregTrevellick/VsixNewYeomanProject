@@ -18,8 +18,8 @@ before_build:
     #- ps: 'if (-Not $env:APPVEYOR_PULL_REQUEST_NUMBER) { & dotnet sonarscanner begin /key:"VsixNewYeomanProject" /d:"sonar.host.url=https://sonarcloud.io" /d:"sonar.login=%my_encrypted_sonarqube_token%" /o:"gregtrevellick-github" }'
     - ps: 'if (-Not $env:APPVEYOR_PULL_REQUEST_NUMBER) { & dotnet sonarscanner begin /key:"VsixNewYeomanProject" /d:"sonar.host.url=https://sonarcloud.io" /d:"sonar.login=$env:my_encrypted_sonarqube_token" /o:="gregtrevellick-github" }'
     #Please use the parameter prefix '/o:' to define the organization of the SonarQube project instead of injecting this organization with the help of the 'sonar.organization' property.
-    #Please use the parameter prefix '/o:' to define the organization of the SonarQube project instead of injecting this organization with the help of the 'sonar.organization' property.
-    #dotnet.exe : 07:27:42.375  07:27:42.372  Unrecognized command line argument: /ogregtrevellick-github
+    #Unrecognized command line argument: /ogregtrevellick-github       when yml is   /o:"gregtrevellick-github"
+    #Failed to request and parse 'https://sonarcloud.io/api/qualityprofiles/search?projectKey=VsixNewYeomanProject&organization=%3Dgregtrevellick-github': The remote server returned an error: (404)       when yml is   /o:="gregtrevellick-github"
 build:
     project: Src/VsixNewYeomanProject.sln
     verbosity: minimal
