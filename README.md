@@ -36,7 +36,7 @@
 [![Visual Studio Marketplace ratings](https://vsmarketplacebadge.apphb.com/rating/GregTrevellick.NewYeomanProject.svg)](https://marketplace.visualstudio.com/items?itemName=GregTrevellick.NewYeomanProject)
 [![Visual Studio Marketplace version](https://vsmarketplacebadge.apphb.com/version/GregTrevellick.NewYeomanProject.svg)](https://marketplace.visualstudio.com/items?itemName=GregTrevellick.NewYeomanProject)
 
-   
+
 
 <!--BadgesEND-->
 
