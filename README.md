@@ -8,6 +8,7 @@
  [![CodeFactor](https://www.codefactor.io/repository/github/GregTrevellick/VsixNewYeomanProject/badge)](https://www.codefactor.io/repository/github/GregTrevellick/VsixNewYeomanProject)
     [![GitHub top language](https://img.shields.io/github/languages/top/GregTrevellick/VsixNewYeomanProject.svg)](https://github.com/GregTrevellick/VsixNewYeomanProject)
 [![Github language count](https://img.shields.io/github/languages/count/GregTrevellick/VsixNewYeomanProject.svg)](https://github.com/GregTrevellick/VsixNewYeomanProject)
+[![GitHub actions](https://github.com/GregTrevellick/VsixNewYeomanProject/workflows/.NET%20Core%20CI/badge.svg)](https://github.com/GregTrevellick/VsixNewYeomanProject/actions)
 [![GitHub issues](https://img.shields.io/github/issues-raw/GregTrevellick/VsixNewYeomanProject.svg)](https://github.com/GregTrevellick/VsixNewYeomanProject/issues)
 [![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/GregTrevellick/VsixNewYeomanProject.svg)](https://github.com/GregTrevellick/VsixNewYeomanProject/pulls)
 [![GitHub followers](https://img.shields.io/github/followers/GregTrevellick.svg)](https://github.com/GregTrevellick?tab=followers)
